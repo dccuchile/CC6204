@@ -39,7 +39,7 @@ Los contenidos de este capítulo son:
 Bibliografía recomendada <sup>[1](#DeepLearningBook)</sup>:
 
 * [Regularización](http://www.deeplearningbook.org/contents/regularization.html)
-* [Optimizacición](http://www.deeplearningbook.org/contents/optimization.html)
+* [Optimización](http://www.deeplearningbook.org/contents/optimization.html)
 
 ### Capítulo 3. Aspectos prácticos de entrenamiento y aprendizaje.
 
