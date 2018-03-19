@@ -150,6 +150,8 @@ conda install -n DeepLearning pytorch torchvision -c pytorch
 
 Para instalar PyTorch con otra versión de CUDA, pueden revisar [PyTorch](http://pytorch.org/) donde les generará el comando de instalación correcto.
 
+Para instalar PyTorch from Source pueden seguir las indicaciones de [Github PyTorch](https://github.com/pytorch/pytorch#from-source)
+
 ---
 
 Adicionalmente, para obtener una mejor performance, puede ser recomendable instalar [cuDNN](https://developer.nvidia.com/cudnn)
