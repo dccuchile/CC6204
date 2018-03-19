@@ -4,7 +4,7 @@
 *   https://conda.io/docs/user-guide/install/linux.html
 *   https://www.anaconda.com/download/#linux
 
-## Instalación de Anaconda
+## Instalación de Anaconda en Linux
 
 Abrir una terminal y descargar y ejecutar el instalador, por ejemplo
 
