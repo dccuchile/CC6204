@@ -1,6 +1,6 @@
 # CC6204 Deep Learning
 
-Deep Learning es un curso electivo de pre y postgrado del departamento de Ciencias de la Computación de la Universidad de Chile. El objetivo del curso es introducir a los estudiantes al área de aprendizaje basado en red neuronales profundas, comúnmente conocida como Deep Learning. Las técnicas utilizadas en esta área han resultado fundamentales en los últimos avances en Inteligencia Artificial en particular tareas como procesamiento de lenguaje natural y visión computacional. Durante el curso los estudiantes serán expuesto a la teoría detrás de los modelos de Deep Learning, comprenderán el funcionamiento, los usos posibles, y serán capaces de construir y entrenar modelos que permitan solucionar problemas reales.
+Deep Learning es un curso electivo de pre y postgrado del departamento de Ciencias de la Computación de la [Universidad de Chile](http://ingenieria.uchile.cl/). El objetivo del curso es introducir a los estudiantes al área de aprendizaje basado en red neuronales profundas, comúnmente conocida como Deep Learning. Las técnicas utilizadas en esta área han resultado fundamentales en los últimos avances en Inteligencia Artificial en particular tareas como procesamiento de lenguaje natural y visión computacional. Durante el curso los estudiantes serán expuesto a la teoría detrás de los modelos de Deep Learning, comprenderán el funcionamiento, los usos posibles, y serán capaces de construir y entrenar modelos que permitan solucionar problemas reales.
 
 ---
 
