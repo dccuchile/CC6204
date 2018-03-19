@@ -125,4 +125,4 @@ Bibliografía recomendada <sup>[1](#DeepLearningBook)</sup>:
 
 
 
-<a name="DeepLearningBook">1</a>: El libro [Deep Learning](http://www.deeplearningbook.org/) de Ian Goodfellow será utilzado como guia durante gran parte del curso
+<a name="DeepLearningBook">1</a>: El libro [Deep Learning](http://www.deeplearningbook.org/) será utilzado como guía durante gran parte del curso.
