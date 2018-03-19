@@ -2,6 +2,8 @@
 
 Deep Learning es un curso electivo de pre y postgrado del departamento de Ciencias de la Computación de la Universidad de Chile. El objetivo del curso es introducir a los estudiantes al área de aprendizaje basado en red neuronales profundas, comúnmente conocida como Deep Learning. Las técnicas utilizadas en esta área han resultado fundamentales en los últimos avances en Inteligencia Artificial en particular tareas como procesamiento de lenguaje natural y visión computacional. Durante el curso los estudiantes serán expuesto a la teoría detrás de los modelos de Deep Learning, comprenderán el funcionamiento, los usos posibles, y serán capaces de construir y entrenar modelos que permitan solucionar problemas reales.
 
+---
+
 ## Unidad 1. Fundamentos
 
 ### Capítulo 1. Introducción a redes neuronales modernas. 
@@ -19,6 +21,10 @@ Bibliografía recomendada <sup>[1](#DeepLearningBook)</sup>:
 * [Algebra lineal](http://www.deeplearningbook.org/contents/part_basics.html)
 * [Probabilidades y teoría de la información](http://www.deeplearningbook.org/contents/prob.html)
 * [Deep Feedforward Networks](http://www.deeplearningbook.org/contents/mlp.html)
+
+Tutoriales recomendados:
+* [Quickstart tutorial numpy](https://docs.scipy.org/doc/numpy-dev/user/quickstart.html)
+* [DeepLearning con PyTorch en 60 minutos](http://pytorch.org/tutorials/beginner/deep_learning_60min_blitz.html)
 
 ### Capítulo 2. Algoritmos de aprendizaje, regularización y optimización.
 
@@ -50,6 +56,8 @@ Bibliografía recomendada <sup>[1](#DeepLearningBook)</sup>:
 
 * [Metodología práctica](http://www.deeplearningbook.org/contents/guidelines.html)
 
+---
+
 ## Unidad 2. Redes convolucionales y aplicaciones.
 
 ### Capitulo 4. Redes convolucionales
@@ -72,6 +80,7 @@ Bibliografía recomendada <sup>[1](#DeepLearningBook)</sup>:
 * [Redes convolucionales](http://www.deeplearningbook.org/contents/convnets.html)
 * [Aplicaciones](http://www.deeplearningbook.org/contents/applications.html)
 
+---
 
 ## Unidad 3. Redes recurrentes y aplicaciones.
 
@@ -90,6 +99,8 @@ Bibliografía recomendada <sup>[1](#DeepLearningBook)</sup>:
 
 * [Modelos secuenciales y redes recurrentes](http://www.deeplearningbook.org/contents/rnn.html)
 * [Aplicaciones](http://www.deeplearningbook.org/contents/applications.html)
+
+---
 
 ## Unidad 4. Tópicos avanzados.
 
