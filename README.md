@@ -26,6 +26,11 @@ Tutoriales recomendados:
 * [Quickstart tutorial numpy](https://docs.scipy.org/doc/numpy-dev/user/quickstart.html)
 * [DeepLearning con PyTorch en 60 minutos](http://pytorch.org/tutorials/beginner/deep_learning_60min_blitz.html)
 
+Videos de las clases:
+* [Clase 1: Peceptrón, funciones de activación, perceptrón multicapa, redes feed forward (FF), expresividad de redes FF](https://www.youtube.com/watch?v=oCGB8wVej-I)
+* [Clase 2: Función de error/pérdida y entrenamiento por descenso del gradiente](https://www.youtube.com/watch?v=tONNKS2En9c)
+* [Clase 3: Algoritmos de backpropagation](https://www.youtube.com/watch?v=KXqSt4-8l_E)
+
 ### Capítulo 2. Algoritmos de aprendizaje, regularización y optimización.
 
 Los contenidos de este capítulo son:
