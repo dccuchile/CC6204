@@ -113,7 +113,7 @@ En este capítulo se elegirán de entre siguientes contenidos:
 * Autoencoder Variacionales
 * Generative Adversarial Networks
 * Neural Turing Machine (NeuralTM).
-* Computación Neuronal Derivable (DNC).
+* Neuronal Derivable Computation (DNC).
 * CapsNet.
 
 Bibliografía recomendada <sup>[1](#DeepLearningBook)</sup>:
