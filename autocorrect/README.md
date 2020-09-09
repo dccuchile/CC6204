@@ -4,7 +4,10 @@ Basic tooling for autocorrecting programming homeworks for the CC6204: Deep Lear
 
 ## Instalation
 
+Install either with
 `pip install "git+https://github.com/dccuchile/CC6204.git@master#egg=cc6204&subdirectory=autocorrect"`
+or with
+`pip install "https://github.com/dccuchile/CC6204/archive/master.zip#subdirectory=autocorrect"`
 
 ## Usage
 ### Instantiate a corrector object:
