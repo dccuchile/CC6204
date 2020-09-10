@@ -5,7 +5,7 @@ with open("README.md", "r") as f:
 
 setuptools.setup(
     name="cc6204",
-    version="0.1.0",
+    version="0.2.0",
     author="Juan-Pablo Silva",
     author_email="jpsilva@dcc.uchile.cl",
     description="Basic autocorrector for CC6204",
