@@ -5,8 +5,7 @@ import numpy as np
 import requests
 import torch
 
-from .exceptions import FailedTest, LibraryError, UserError
-
+from .exceptions import FailedTest, LibraryError, MessageFromServer, UserError
 
 _nested = lambda: defaultdict(_nested)
 
@@ -19,13 +18,16 @@ class AutoCorrect:
         self.port = port
 
         try:
-            requests.get(f"http://{self.host}:{self.port}/ping")
+            val = requests.get(f"http://{self.host}:{self.port}/ping").json()
         except requests.exceptions.ConnectionError:
             raise LibraryError(
                 "Connection could not be stablished. Contact JP") from None
         except BaseException:
             raise LibraryError(
                 "Unknown Error occurred. Contact JP") from None
+        else:
+            if "msg" in val:
+                raise MessageFromServer(val["msg"])
 
     def sumbit(
             self,
@@ -62,12 +64,13 @@ class AutoCorrect:
             if "error" in response:
                 raise UserError(**response["error"])
 
-            result = response["result"]
-            msg = response["message"]
-            if result == "correct":
+            status = response["status"]
+            mask = response["mask"]
+            comments = response["comments"]
+            if status == 1:
                 print("Correct Test!")
-            elif result == "fail":
-                raise FailedTest(msg)
+            elif status == 0:
+                raise FailedTest(mask, comments)
             else:
                 raise ValueError(
                     "Something went wrong and I don't know what to do. "

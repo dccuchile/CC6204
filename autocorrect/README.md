@@ -21,7 +21,7 @@ corrector = AutoCorrect(host=<host>, port=<value>)
 ```python
 corrector.sumbit(homework=1, question="1a", test=1, token=<token>, answer=...)
 ```
-Submit will raise a `FailedTest` exception when the submited answer is not what we were expecting. If you want to know which values you submited were labeled incorrect, catch the exception and get the `msg` attribute as follows:
+Submit will raise a `FailedTest` exception when the submited answer is not what we were expecting. If you want to know which values you submited were labeled incorrect, catch the exception and get the `mask` attribute as follows:
 ```python
 from cc6204 import FailedTest
 
@@ -29,7 +29,8 @@ revision = None
 try:
     corrector.sumbit(homework=1, question="1a", test=1, token=<token>, answer=...)
 except FailedTest as e:
-    revision = e.msg
+    print(e.comments)
+    revision = e.mask
 
 print(revision)
 ```
@@ -41,6 +42,11 @@ If you get all correct values, then no exception is raised and a `"Correct Test!
 test_input = corrector.get_test_data(homework=1, question="1a", test=1, token=<token>)
 ```
 Use this `test_input` values as an input to you implementation and send the output as an answer to the `submit` method.
+
+Some tests have arguments assigned to them, in that case the `get_test_data` method returns a tuple `(test_data, *arguments)` like so:
+```python
+test_input, param1, param2, ... = corrector.get_test_data(homework=10, question="1z", test=12, token=<token>)
+```
 
 
 ### How to use it in your homework
@@ -70,8 +76,9 @@ revision = None
 try:
     corrector.sumbit(homework=1, question="2b", test=3, token=<token>, answer=my_answer)
 except FailedTest as e:
+    print(e.comments)
     # this is a mask with the values you missed
-    revision = e.msg
+    revision = e.mask
 
 if revision is not None:
     # you made mistakes
