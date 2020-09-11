@@ -18,11 +18,11 @@ class AutoCorrect:
         self.port = port
 
         try:
-            val = requests.get(f"http://{self.host}:{self.port}/ping")
+            val = requests.get(f"https://{self.host}:{self.port}/ping")
         except requests.exceptions.ConnectionError:
             raise LibraryError(
                 "Connection could not be stablished. Contact JP") from None
-        except BaseException as e:
+        except BaseException:
             raise LibraryError(
                 "Unknown Error occurred. Contact JP") from None
         else:
@@ -53,7 +53,7 @@ class AutoCorrect:
 
         try:
             response = requests.post(
-                f"http://{self.host}:{self.port}/api/autocheck/{homework}/{question}",
+                f"https://{self.host}:{self.port}/api/autocheck/{homework}/{question}",
                 json={
                     "token": token,
                     "test": test,
@@ -94,7 +94,7 @@ class AutoCorrect:
         if not data:
             try:
                 response = requests.get(
-                    f'http://{self.host}:{self.port}/api/tests/{homework}/{question}',
+                    f'https://{self.host}:{self.port}/api/tests/{homework}/{question}',
                     params={
                         "token": token,
                         "test": test}).json()
