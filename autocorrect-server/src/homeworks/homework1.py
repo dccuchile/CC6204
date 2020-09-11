@@ -58,3 +58,9 @@ def load_tests():
             __tests_expected[question] = {}
         for test, values in tests.items():
             __tests_expected[question][test] = np.array(values)
+
+
+def reload_tests():
+    __tests_data.clear()
+    __tests_expected.clear()
+    load_tests()

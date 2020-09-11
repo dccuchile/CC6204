@@ -35,8 +35,25 @@ def ping():
     return {"message": "Not yet ready."}
 
 
+@app.route("/force_reload/<string:homework_number>", methods=["POST"])
+def reload_tests(homework_number):
+    if not request.is_json:
+        return error("Sent format is not a json", "json")
+    data = request.get_json()
+    if "token" not in data:
+        return error("The token is not included", "token_missing")
+    if data["token"] != os.environ["ADMIN_TOKEN"]:
+        return error("The token is not correct/is invalid", "token_wrong")
+    if homework_number not in available_homeworks:
+        return error(f"There is no homework {homework_number}", "no_homework")
+
+    available_homeworks[homework_number].reload_tests()
+
+    return "OK"
+
+
 @app.route("/api/autocheck/<string:homework_number>/<string:question_number>",
-           methods=["POST"])  # type:ignore
+           methods=["POST"])
 def autocheck(homework_number, question_number):
     if not request.is_json:
         return error("Sent format is not a json", "json")
@@ -56,7 +73,7 @@ def autocheck(homework_number, question_number):
 
 
 @app.route("/api/tests/<string:homework_number>/<string:question_number>",
-           methods=["GET"])  # type:ignore
+           methods=["GET"])
 def process(homework_number, question_number):
     data = request.args
     if "token" not in data:
