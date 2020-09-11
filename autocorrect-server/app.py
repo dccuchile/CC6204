@@ -5,7 +5,6 @@ from flask import Flask, request
 import src.homeworks.homework1 as homework1
 from src.handler import error
 
-os.environ["TOKEN"] = "HELLO"
 
 available_homeworks = {
     "1": homework1
@@ -33,7 +32,7 @@ app = PreFlask(__name__)
 
 @app.route("/ping")
 def ping():
-    return "OK"
+    return {"message": "Not yet ready."}
 
 
 @app.route("/api/autocheck/<string:homework_number>/<string:question_number>",
@@ -73,5 +72,4 @@ def process(homework_number, question_number):
 
 
 if __name__ == '__main__':
-    load_tests()
     app.run(host='0.0.0.0')
