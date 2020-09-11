@@ -1,12 +1,14 @@
+import os
+
 from flask import Flask, request
 
 import src.homeworks.homework1 as homework1
 from src.handler import error
 
-app = Flask(__name__)
+os.environ["TOKEN"] = "HELLO"
 
 available_homeworks = {
-    1: homework1
+    "1": homework1
 }
 
 
@@ -19,7 +21,22 @@ def load_tests():
             raise e
 
 
-@app.route("/api/autocheck/<str:homework_number>/<str:question_number>",
+class PreFlask(Flask):
+    def run(self, *args, **kwargs):
+        with self.app_context():
+            load_tests()
+        super().run(*args, **kwargs)
+
+
+app = PreFlask(__name__)
+
+
+@app.route("/ping")
+def ping():
+    return "OK"
+
+
+@app.route("/api/autocheck/<string:homework_number>/<string:question_number>",
            methods=["POST"])  # type:ignore
 def autocheck(homework_number, question_number):
     if not request.is_json:
@@ -27,7 +44,7 @@ def autocheck(homework_number, question_number):
     data = request.get_json()
     if "token" not in data:
         return error("The token is not included", "token_missing")
-    if data["token"] != "mytoken":
+    if data["token"] != os.environ["TOKEN"]:
         return error("The token is not correct/is invalid", "token_wrong")
     if homework_number not in available_homeworks:
         return error(f"There is no homework {homework_number}", "no_homework")
@@ -39,13 +56,13 @@ def autocheck(homework_number, question_number):
         question_number, str(data["test"]), data["answer"])
 
 
-@app.route("/api/tests/<str:homework_number>/<str:question_number>",
+@app.route("/api/tests/<string:homework_number>/<string:question_number>",
            methods=["GET"])  # type:ignore
 def process(homework_number, question_number):
     data = request.args
     if "token" not in data:
         return error("The token is not included", "token_missing")
-    if data["token"] != "mytoken":
+    if data["token"] != os.environ["TOKEN"]:
         return error("The token is not correct/is invalid", "token_wrong")
     if homework_number not in available_homeworks:
         return error(f"There is no homework {homework_number}", "no_homework")
