@@ -47,12 +47,14 @@ def get_test(question_number, test_number):
 
 
 def load_tests():
-    with open("./data/homeworks/1.json", "r") as f:
+    with open("./tests/1/1.json", "r") as f:
         data = json.load(f)
 
     __tests_data.update(data["input"])
     expected = data["expected"]
 
     for question, tests in expected.items():
+        if question not in __tests_expected:
+            __tests_expected[question] = {}
         for test, values in tests.items():
             __tests_expected[question][test] = np.array(values)
