@@ -47,7 +47,7 @@ def get_test(question_number, test_number):
 
 
 def load_tests():
-    with open("./tests/1/1.json", "r") as f:
+    with open("./tests/hw1.json", "r") as f:
         data = json.load(f)
 
     __tests_data.update(data["input"])
