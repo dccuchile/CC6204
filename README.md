@@ -82,6 +82,10 @@ Bibliografía:[Modelos secuenciales y redes recurrentes](http://www.deeplearning
 
 Bibliografía: [Autoencoders](http://www.deeplearningbook.org/contents/autoencoders.html), [Modelos generativos](www.deeplearningbook.org/contents/generative_models.html)
 
+## Librerías que usaremos
+1. [Pytorch](https://pytorch.org/)
+2. [numpy](https://numpy.org/)
+
 ## Libros
 1. [Deep Learning](http://www.deeplearningbook.org/) (bibliografía fundamental del curso)
 2. [Dive into Deep Learning](https://d2l.ai/)
