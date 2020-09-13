@@ -4,7 +4,7 @@ Curso introductorio al área de aprendizaje basado en redes neuronales profundas
 
 * Profesor: [Jorge Pérez](https://users.dcc.uchile.cl/~jperez/)
 * Auxiliares: [Gabriel Chaperon](https://avatars3.githubusercontent.com/u/21991723?s=64&v=4), [Ho Jin Kang](https://github.com/hojink1996), [Juan-Pablo Silva](https://github.com/juanpablos), [Mauricio Romero](https://github.com/fluowhy), [Jesús Pérez-Martín](https://jssprz.github.io/)
-* [Calendario del curso](https://github.com/dccuchile/CC6204/blob/master/calendar.md)
+* [Calendario del curso](calendar.md)
 * [YouTube playlist](https://www.youtube.com/playlist?list=PLBjZ-ginWc1e0_Dp4heHglsjJmacV_F20)
 
 ## Temas
@@ -46,16 +46,12 @@ Bibliografía: [Metodología práctica](http://www.deeplearningbook.org/contents
 
 ### 2. Redes convolucionales y aplicaciones.
 
-* Redes Neuronales convolucionales 
-* Relación de CNN con el modelo biológico 
+* Redes Neuronales convolucionales
 * Estudio de arquitecturas CNN del estado del arte
-* Caffe y TensorFlow 
 * Visualización de modelos CNN
 * Búsqueda por Similitud usando Deep Features
 * Hashing de vectores de características usando Deep Learning
 * Class Activation Mapping
-* Modelos de Deep Learning para Detección de Objetos (imágenes) 
-* Modelos de Deep Learning para Segmentación de imágenes
 
 Bibliografía: [Redes convolucionales](http://www.deeplearningbook.org/contents/convnets.html), [Aplicaciones](http://www.deeplearningbook.org/contents/applications.html)
 
