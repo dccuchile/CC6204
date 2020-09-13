@@ -1,5 +1,3 @@
-## Módulo 1. Fundamentos
-
 ### Semana 1
 
 * Cátedra: Introducción, IA vs ML vs DL, ¿Por qué DL ahora?
@@ -10,8 +8,62 @@
 * Cátedra: UAT, Redes Feed-Forward, y función de salida (softmax)
 * Auxiliar: Colab, Pytorch y Tensores, una introducción práctica.
 
-## Módulo 2. Redes convolucionales y aplicaciones
+### Semana 3
 
-## Módulo 3. Redes recurrentes y aplicaciones
+* Cátedra: Backpropagation
+* Catedra: Tensores
 
-## Módulo 4. Tópicos avanzados
+### Semana 4
+
+* Cátedra: Backpropagation a mano + pytorch
+* Catedra: Aspectos prácticos de entrenamiento
+
+### Semana 5
+
+* Cátedra: Regularización
+* Cátedra: Intro a otras arquitecturas (Convolucionales)
+
+### Semana 6
+
+* Cátedra: Intro a otras arquitecturas (Recurrentes)
+* Cátedra: Optimización I
+
+### Semana 7
+
+* Cátedra: Optimización II
+* Cátedra: Redes Conv (AlexNet, VGG)
+
+### Semana 8
+
+* Cátedra: Redes Conv (InceptionNet, ResNet, DenseNet)
+* Cátedra: Intro a recurrentes
+
+### Semana 9
+
+* Cátedra: Bidirectional + Seq to Seq
+* Cátedra: Compuertas
+
+### Semana 10
+
+* Cátedra: Attention
+* Cátedra: Avanzado
+
+### Semana 11
+
+* Cátedra: Avanzado
+* Cátedra: Avanzado
+
+### Semana 12
+
+* Cátedra: Avanzado
+* Cátedra: Avanzado
+
+### Semana 13
+
+* Cátedra: Avanzado
+* Cátedra: Avanzado
+
+### Semana 14
+
+* Cátedra: Avanzado
+* Cátedra: Avanzado
