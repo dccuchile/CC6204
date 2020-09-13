@@ -13,15 +13,15 @@ Curso introductorio al área de aprendizaje basado en redes neuronales profundas
 
 ### 1. Fundamentos
 
-Introducción, IA vs ML vs DL, ¿Por qué DL ahora? ([apuntes](versiones_anteriores/2020/clases/apuntes/0_intro.pdf), [video](https://www.youtube.com/watch?v=BASByOlqqkc&list=PLBjZ-ginWc1e0_Dp4heHglsjJmacV_F20&index=1))
+Introducción, IA vs ML vs DL, ¿Por qué DL ahora? ([apuntes](versiones_anteriores/2019/clases/apuntes/0_intro.pdf), [video](https://www.youtube.com/watch?v=BASByOlqqkc&list=PLBjZ-ginWc1e0_Dp4heHglsjJmacV_F20&index=1))
 
 #### 1.1. Redes neuronales modernas.
 
-* Perceptrón, perceptrón multi-capa, funciones de activación, no linealidad ([apuntes](versiones_anteriores/2020/clases/apuntes/1_FFNN.pdf), [video](https://www.youtube.com/watch?v=mDCxK2Pu0mA&list=PLBjZ-ginWc1e0_Dp4heHglsjJmacV_F20&index=2))
-* Redes neuronales, cómo computan, qué no pueden computar, representación tensorial ([video1](https://www.youtube.com/watch?v=eV-N1ozcZrk&list=PLBjZ-ginWc1e0_Dp4heHglsjJmacV_F20&index=3))
+* Perceptrón, perceptrón multi-capa, funciones de activación, no linealidad ([apuntes](versiones_anteriores/2019/clases/apuntes/1_FFNN.pdf), [video](https://www.youtube.com/watch?v=mDCxK2Pu0mA&list=PLBjZ-ginWc1e0_Dp4heHglsjJmacV_F20&index=2))
+* Redes neuronales, cómo computan, qué no pueden computar, representación tensorial ([video](https://www.youtube.com/watch?v=eV-N1ozcZrk&list=PLBjZ-ginWc1e0_Dp4heHglsjJmacV_F20&index=3))
 * Álgebra tensorial y cálculo tensorial
 * Funciones de error/pérdida y entrenamiento por descenso de gradiente
-* Grafos de computación y el algoritmo de BackPropagation ([apuntes](versiones_anteriores/2020/clases/apuntes/2_BackPropagation.pdf))
+* Grafos de computación y el algoritmo de BackPropagation ([apuntes](versiones_anteriores/2019/clases/apuntes/2_BackPropagation.pdf))
 
 Bibliografía: [Algebra lineal](http://www.deeplearningbook.org/contents/part_basics.html), [Probabilidades y teoría de la información](http://www.deeplearningbook.org/contents/prob.html), [Deep Feedforward Networks](http://www.deeplearningbook.org/contents/mlp.html)
 
