@@ -48,16 +48,14 @@ Bibliografía: [Regularización](http://www.deeplearningbook.org/contents/regula
 
 Bibliografía: [Metodología práctica](http://www.deeplearningbook.org/contents/guidelines.html)
 
-### 2. Redes convolucionales
+### 2. Redes Neuronales Convolucionales (CNN)
 
-* Redes Neuronales Convolucionales (CNN)
 * Arquitecturas más conocidas: AlexNet, VGG, InceptionNet, ResNet, DenseNet
 
 Bibliografía: [Redes convolucionales](http://www.deeplearningbook.org/contents/convnets.html), [Aplicaciones](http://www.deeplearningbook.org/contents/applications.html)
 
-### 3. Redes recurrentes y aplicaciones
+### 3. Redes Neuronales Recurrentes (RNN)
 
-* Redes Neuronales Recurrentes (RNN)
 * Backpropagation en el tiempo 
 * Redes recurrentes bidireccionales
 * Dependencias temporales a largo plazo
@@ -91,7 +89,8 @@ Bibliografía: [Autoencoders](http://www.deeplearningbook.org/contents/autoencod
 2. [DeepLearning con PyTorch en 60 minutos](http://pytorch.org/tutorials/beginner/deep_learning_60min_blitz.html)
 
 ## Videos
-1. [More on Transformers: BERT and Friends](https://tv.vera.com.uy/video/55388)
+1. [Visualizing and Understanding Recurrent Networks](https://skillsmatter.com/skillscasts/6611-visualizing-and-understanding-recurrent-networks)
+2. [More on Transformers: BERT and Friends](https://tv.vera.com.uy/video/55388)
 
 ## Otras Fuentes
 1. [Attention is all you need explained](http://mlexplained.com/2017/12/29/attention-is-all-you-need-explained/)
