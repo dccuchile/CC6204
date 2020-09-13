@@ -41,17 +41,17 @@
 ### Semana 9
 
 * Cátedra: Bidirectional + Seq to Seq
-* Cátedra: Compuertas
+* Cátedra: GRU, LSTM, Compuertas
 
 ### Semana 10
 
-* Cátedra: Attention
-* Cátedra: Avanzado
+* Cátedra: Atención Neuronal
+* Cátedra: Transformers
 
 ### Semana 11
 
-* Cátedra: Avanzado
-* Cátedra: Avanzado
+* Cátedra: Graph Neural Networks 
+* Cátedra: Generative Adversarial Networks mañana?
 
 ### Semana 12
 

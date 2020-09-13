@@ -91,5 +91,6 @@ Bibliografía: [Autoencoders](http://www.deeplearningbook.org/contents/autoencod
 2. [DeepLearning con PyTorch en 60 minutos](http://pytorch.org/tutorials/beginner/deep_learning_60min_blitz.html)
 
 ## Videos
+1. [More on Transformers: BERT and Friends](https://tv.vera.com.uy/video/55388)
 
 ## Otras Fuentes
