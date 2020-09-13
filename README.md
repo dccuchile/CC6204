@@ -74,7 +74,7 @@ Bibliografía:[Modelos secuenciales y redes recurrentes](http://www.deeplearning
 * Differentiable Neural Computers (DNC).
 * CapsNet.
 
-Bibliografía: [Autoencoders](http://www.deeplearningbook.org/contents/autoencoders.html), [Modelos generativos](www.deeplearningbook.org/contents/generative_models.html)
+Bibliografía: [Autoencoders](http://www.deeplearningbook.org/contents/autoencoders.html), [Modelos generativos](http://www.deeplearningbook.org/contents/generative_models.html)
 
 ## Librerías que usaremos
 1. [Pytorch](https://pytorch.org/)
