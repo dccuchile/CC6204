@@ -51,7 +51,7 @@
 ### Semana 11
 
 * Cátedra: Graph Neural Networks 
-* Cátedra: Generative Adversarial Networks mañana?
+* Cátedra: Generative Adversarial Networks
 
 ### Semana 12
 

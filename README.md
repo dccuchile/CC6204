@@ -4,6 +4,8 @@ Curso introductorio al área de aprendizaje basado en redes neuronales profundas
 
 * Profesor: [Jorge Pérez](https://users.dcc.uchile.cl/~jperez/)
 * Auxiliares: [Gabriel Chaperon](https://avatars3.githubusercontent.com/u/21991723?s=64&v=4), [Ho Jin Kang](https://github.com/hojink1996), [Juan-Pablo Silva](https://github.com/juanpablos), [Mauricio Romero](https://github.com/fluowhy), [Jesús Pérez-Martín](https://jssprz.github.io/)
+
+#### Primavera 2020
 * [Calendario del curso](calendar.md)
 * [YouTube playlist](https://www.youtube.com/playlist?list=PLBjZ-ginWc1e0_Dp4heHglsjJmacV_F20)
 
@@ -11,10 +13,12 @@ Curso introductorio al área de aprendizaje basado en redes neuronales profundas
 
 ### 1. Fundamentos
 
-#### 1.1. Introducción a redes neuronales modernas.
+Introducción, IA vs ML vs DL, ¿Por qué DL ahora? ([video1](https://www.youtube.com/watch?v=BASByOlqqkc&list=PLBjZ-ginWc1e0_Dp4heHglsjJmacV_F20&index=1))
 
-* Perceptrón, perceptrón multi-capa, funciones de activación, no linealidad
-* Redes neuronales, cómo computan, qué no pueden computar, representación tensorial
+#### 1.1. Redes neuronales modernas.
+
+* Perceptrón, perceptrón multi-capa, funciones de activación, no linealidad ([video1](https://www.youtube.com/watch?v=mDCxK2Pu0mA&list=PLBjZ-ginWc1e0_Dp4heHglsjJmacV_F20&index=2))
+* Redes neuronales, cómo computan, qué no pueden computar, representación tensorial ([video1](https://www.youtube.com/watch?v=eV-N1ozcZrk&list=PLBjZ-ginWc1e0_Dp4heHglsjJmacV_F20&index=3))
 * Álgebra tensorial y cálculo tensorial
 * Funciones de error/pérdida y entrenamiento por descenso de gradiente
 * Grafos de computación y el algoritmo de BackPropagation
@@ -44,25 +48,21 @@ Bibliografía: [Regularización](http://www.deeplearningbook.org/contents/regula
 
 Bibliografía: [Metodología práctica](http://www.deeplearningbook.org/contents/guidelines.html)
 
-### 2. Redes convolucionales y aplicaciones.
+### 2. Redes convolucionales
 
-* Redes Neuronales convolucionales
-* Estudio de arquitecturas CNN del estado del arte
-* Visualización de modelos CNN
-* Búsqueda por Similitud usando Deep Features
-* Hashing de vectores de características usando Deep Learning
-* Class Activation Mapping
+* Redes Neuronales Convolucionales (CNN)
+* Arquitecturas más conocidas: AlexNet, VGG, InceptionNet, ResNet, DenseNet
 
 Bibliografía: [Redes convolucionales](http://www.deeplearningbook.org/contents/convnets.html), [Aplicaciones](http://www.deeplearningbook.org/contents/applications.html)
 
 ### 3. Redes recurrentes y aplicaciones
 
-* Redes recurrentes 
+* Redes Neuronales Recurrentes (RNN)
 * Backpropagation en el tiempo 
-* Redes recurrentes bidireccionales. 
-* Dependencias temporales a largo plazo. 
-* Modelos con memoria externa explícita. 
-* Aplicaciones en procesamiento de lenguaje natural y otras aplicaciones basadas en secuencias.
+* Redes recurrentes bidireccionales
+* Dependencias temporales a largo plazo
+* Modelos con memoria externa explícita
+* Arquitecturas más conocidas: GRU, LSTM
 
 Bibliografía:[Modelos secuenciales y redes recurrentes](http://www.deeplearningbook.org/contents/rnn.html), [Aplicaciones](http://www.deeplearningbook.org/contents/applications.html)
 
@@ -94,3 +94,5 @@ Bibliografía: [Autoencoders](http://www.deeplearningbook.org/contents/autoencod
 1. [More on Transformers: BERT and Friends](https://tv.vera.com.uy/video/55388)
 
 ## Otras Fuentes
+1. [Attention is all you need explained](http://mlexplained.com/2017/12/29/attention-is-all-you-need-explained/)
+2. [BERT exaplained](http://mlexplained.com/2019/01/07/paper-dissected-bert-pre-training-of-deep-bidirectional-transformers-for-language-understanding-explained/)
