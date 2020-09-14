@@ -77,6 +77,9 @@ Readings: [Chapter 14. Autoencoders](http://www.deeplearningbook.org/contents/au
 1. [Quickstart tutorial numpy](https://docs.scipy.org/doc/numpy-dev/user/quickstart.html)
 2. [DeepLearning con PyTorch en 60 minutos](http://pytorch.org/tutorials/beginner/deep_learning_60min_blitz.html)
 
+## Otros cursos de DL
+1. [Introduction to Deep Learning](http://introtodeeplearning.com/)
+
 ## Videos
 1. [Visualizing and Understanding Recurrent Networks](https://skillsmatter.com/skillscasts/6611-visualizing-and-understanding-recurrent-networks)
 2. [More on Transformers: BERT and Friends](https://tv.vera.com.uy/video/55388)
