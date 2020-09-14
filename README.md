@@ -25,25 +25,16 @@ Introducción, IA vs ML vs DL, ¿Por qué DL ahora? ([apuntes](versiones_anterio
 
 Readings: [Chapter 2. Lineal Algebra](http://www.deeplearningbook.org/contents/linear_algebra.html), [Chapter 3. Probability and Information Theory](http://www.deeplearningbook.org/contents/prob.html), [Chapter 6. Deep Feedforward Networks](http://www.deeplearningbook.org/contents/mlp.html)
 
-#### 1.2. Algoritmos de aprendizaje, regularización y optimización
+#### 1.2. Entrenamiento, Aprendizaje, Regularización y Optimización
 
 * Descenso de gradiente estocástico
 * Inicialización de parámetros, normalización, normalización de paquetes
 * Aprendizaje adaptativo 
 * Dropout 
 * Penalización de parámetros
+* Aspectos prácticos de entrenamiento: métricas, baselines, overfitting, underfitting
 
-Readings: [Chapter 7. Regularization for Deep Learning](http://www.deeplearningbook.org/contents/regularization.html), [Chapter 8. Optimization for Training DeepModels](http://www.deeplearningbook.org/contents/optimization.html)
-
-#### 1.3. Entrenamiento y Aprendizaje
-
-* Conceptos clásicos de aprendizaje de máquina
-* Métricas de eficiencia, baselines, overfitting, underfitting
-* Búsqueda y selección de hiperparámetros
-* Técnicas de debugging 
-* Uso de GPUs en el entrenamiento
-
-Readings: [Chapter 11. Practical Methodology](http://www.deeplearningbook.org/contents/guidelines.html)
+Readings: [Chapter 7. Regularization for Deep Learning](http://www.deeplearningbook.org/contents/regularization.html), [Chapter 8. Optimization for Training DeepModels](http://www.deeplearningbook.org/contents/optimization.html), [Chapter 11. Practical Methodology](http://www.deeplearningbook.org/contents/guidelines.html)
 
 ### 2. Redes Neuronales Convolucionales (CNN)
 
