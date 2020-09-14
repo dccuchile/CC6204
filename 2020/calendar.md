@@ -1,3 +1,5 @@
+## Calendario 2020 (preliminar)
+
 ### Semana 1
 
 * Cátedra: Introducción, IA vs ML vs DL, ¿Por qué DL ahora?
