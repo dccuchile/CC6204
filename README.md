@@ -23,9 +23,7 @@ Introducción, IA vs ML vs DL, ¿Por qué DL ahora? ([apuntes](versiones_anterio
 * Funciones de error/pérdida y entrenamiento por descenso de gradiente
 * Grafos de computación y el algoritmo de BackPropagation ([apuntes](versiones_anteriores/2019/clases/apuntes/2_BackPropagation.pdf))
 
-Bibliografía: [Algebra lineal](http://www.deeplearningbook.org/contents/part_basics.html), [Probabilidades y teoría de la información](http://www.deeplearningbook.org/contents/prob.html), [Deep Feedforward Networks](http://www.deeplearningbook.org/contents/mlp.html)
-
-Tutoriales: [Quickstart tutorial numpy](https://docs.scipy.org/doc/numpy-dev/user/quickstart.html), [DeepLearning con PyTorch en 60 minutos](http://pytorch.org/tutorials/beginner/deep_learning_60min_blitz.html)
+Readings: [Chapter 2. Lineal Algebra](http://www.deeplearningbook.org/contents/linear_algebra.html), [Chapter 3. Probability and Information Theory](http://www.deeplearningbook.org/contents/prob.html), [Chapter 6. Deep Feedforward Networks](http://www.deeplearningbook.org/contents/mlp.html)
 
 #### 1.2. Algoritmos de aprendizaje, regularización y optimización
 
@@ -35,24 +33,23 @@ Tutoriales: [Quickstart tutorial numpy](https://docs.scipy.org/doc/numpy-dev/use
 * Dropout 
 * Penalización de parámetros
 
-Bibliografía: [Regularización](http://www.deeplearningbook.org/contents/regularization.html), [Optimización](http://www.deeplearningbook.org/contents/optimization.html)
+Readings: [Chapter 7. Regularization for Deep Learning](http://www.deeplearningbook.org/contents/regularization.html), [Chapter 8. Optimization for Training DeepModels](http://www.deeplearningbook.org/contents/optimization.html)
 
-#### 1.3. Aspectos prácticos de entrenamiento y aprendizaje
+#### 1.3. Entrenamiento y Aprendizaje
 
 * Conceptos clásicos de aprendizaje de máquina
 * Métricas de eficiencia, baselines, overfitting, underfitting
 * Búsqueda y selección de hiperparámetros
 * Técnicas de debugging 
-* Uso de GPUs en el entrenamiento 
-* Organizando una solución basada en Machine Learning y Deep Learning
+* Uso de GPUs en el entrenamiento
 
-Bibliografía: [Metodología práctica](http://www.deeplearningbook.org/contents/guidelines.html)
+Readings: [Chapter 11. Practical Methodology](http://www.deeplearningbook.org/contents/guidelines.html)
 
 ### 2. Redes Neuronales Convolucionales (CNN)
 
 * Arquitecturas más conocidas: AlexNet, VGG, InceptionNet, ResNet, DenseNet
 
-Bibliografía: [Redes convolucionales](http://www.deeplearningbook.org/contents/convnets.html), [Aplicaciones](http://www.deeplearningbook.org/contents/applications.html)
+Readings: [Chapter 9. Convolutional Networks](http://www.deeplearningbook.org/contents/convnets.html), [Chapter 12. Applications](http://www.deeplearningbook.org/contents/applications.html)
 
 ### 3. Redes Neuronales Recurrentes (RNN)
 
@@ -62,7 +59,7 @@ Bibliografía: [Redes convolucionales](http://www.deeplearningbook.org/contents/
 * Modelos con memoria externa explícita
 * Arquitecturas más conocidas: GRU, LSTM
 
-Bibliografía:[Modelos secuenciales y redes recurrentes](http://www.deeplearningbook.org/contents/rnn.html), [Aplicaciones](http://www.deeplearningbook.org/contents/applications.html)
+Readings: [Chapter 10. Sequence Modeling: Recurrentand Recursive Nets](http://www.deeplearningbook.org/contents/rnn.html), [Chapter 12. Applications](http://www.deeplearningbook.org/contents/applications.html)
 
 ### 4. Tópicos avanzados
 
@@ -74,7 +71,7 @@ Bibliografía:[Modelos secuenciales y redes recurrentes](http://www.deeplearning
 * Differentiable Neural Computers (DNC).
 * CapsNet.
 
-Bibliografía: [Autoencoders](http://www.deeplearningbook.org/contents/autoencoders.html), [Modelos generativos](http://www.deeplearningbook.org/contents/generative_models.html)
+Readings: [Chapter 14. Autoencoders](http://www.deeplearningbook.org/contents/autoencoders.html), [Chapter 20. Deep Generative Models](http://www.deeplearningbook.org/contents/generative_models.html)
 
 ## Librerías que usaremos
 1. [Pytorch](https://pytorch.org/)
