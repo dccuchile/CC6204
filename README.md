@@ -66,18 +66,22 @@ Readings: [Chapter 10. Sequence Modeling: Recurrentand Recursive Nets](http://ww
 Readings: [Chapter 14. Autoencoders](http://www.deeplearningbook.org/contents/autoencoders.html), [Chapter 20. Deep Generative Models](http://www.deeplearningbook.org/contents/generative_models.html)
 
 ## Librerías que usaremos
-1. [Pytorch](https://pytorch.org/)
+1. [PyTorch](https://pytorch.org/)
 2. [numpy](https://numpy.org/)
 
 ## Libros
-1. [Deep Learning](http://www.deeplearningbook.org/) (bibliografía fundamental del curso)
+1. [Deep Learning](http://www.deeplearningbook.org/) by Ian Goodfellow, Yoshua Bengio and Aaron Courville (bibliografía fundamental del curso)
 2. [Dive into Deep Learning](https://d2l.ai/)
+3. [Probabilistic and Statistical Models for Outlier Detection](https://www.springer.com/cda/content/document/cda_downloaddocument/9783319475776-c1.pdf?SGWID=0-0-45-1597574-p180317591) by Charu Aggarwal
+4. [Speech and Language Processing](https://web.stanford.edu/~jurafsky/slp3/ed3book.pdf) by Daniel Jurafsky and James Martin
+5. [Notes on Deep Learning for NLP](https://arxiv.org/abs/1808.09772) by Antoine J.-P. Tixier
+6. [AutoML: Methods, Systems, Challenges](https://www.automl.org/book/) edited by Frank Hutter, Lars Kotthoff and Joaquin Vanschoren
 
 ## Tutoriales
 1. [Quickstart tutorial numpy](https://docs.scipy.org/doc/numpy-dev/user/quickstart.html)
 2. [DeepLearning con PyTorch en 60 minutos](http://pytorch.org/tutorials/beginner/deep_learning_60min_blitz.html)
 
-## Otros cursos de DL
+## Otros Cursos de DL
 1. [Introduction to Deep Learning](http://introtodeeplearning.com/)
 
 ## Videos
@@ -85,5 +89,10 @@ Readings: [Chapter 14. Autoencoders](http://www.deeplearningbook.org/contents/au
 2. [More on Transformers: BERT and Friends](https://tv.vera.com.uy/video/55388)
 
 ## Otras Fuentes
-1. [Attention is all you need explained](http://mlexplained.com/2017/12/29/attention-is-all-you-need-explained/)
-2. [BERT exaplained](http://mlexplained.com/2019/01/07/paper-dissected-bert-pre-training-of-deep-bidirectional-transformers-for-language-understanding-explained/)
+1. [How To Improve Deep Learning Performance](https://machinelearningmastery.com/improve-deep-learning-performance/)
+2. [An Overview of ResNet and its Variants](https://towardsdatascience.com/an-overview-of-resnet-and-its-variants-5281e2f56035)
+2. [CNN Architectures: LeNet, AlexNet, VGG, GoogLeNet, ResNet and more](https://medium.com/@sidereal/cnns-architectures-lenet-alexnet-vgg-googlenet-resnet-and-more-666091488df5)
+3. [Understanding LSTM Networks](http://colah.github.io/posts/2015-08-Understanding-LSTMs/)
+4. [Attention Is All You Need](https://arxiv.org/abs/1706.03762)
+5. [Attention is all you need explained](http://mlexplained.com/2017/12/29/attention-is-all-you-need-explained/)
+6. [BERT exaplained](http://mlexplained.com/2019/01/07/paper-dissected-bert-pre-training-of-deep-bidirectional-transformers-for-language-understanding-explained/)
