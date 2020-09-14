@@ -83,6 +83,10 @@ Readings: [Chapter 14. Autoencoders](http://www.deeplearningbook.org/contents/au
 
 ## Otros Cursos de DL
 1. [Introduction to Deep Learning](http://introtodeeplearning.com/)
+2. [Deep learning course on Coursera](https://www.coursera.org/specializations/deep-learning) by Andrew Ng
+3. [CS231n course](http://cs231n.stanford.edu/) by Stanford University
+4. [Courses](http://www.fast.ai/) by fast.ai
+5. 
 
 ## Videos
 1. [Visualizing and Understanding Recurrent Networks](https://skillsmatter.com/skillscasts/6611-visualizing-and-understanding-recurrent-networks)
