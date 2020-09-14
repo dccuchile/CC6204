@@ -10,13 +10,13 @@ Curso introductorio al área de aprendizaje basado en redes neuronales profundas
 * [Calendario del curso](2020/calendar.md)
 * [YouTube playlist](https://www.youtube.com/playlist?list=PLBjZ-ginWc1e0_Dp4heHglsjJmacV_F20)
 
-### Temas
+## Temas
 
-#### 1. Fundamentos
+### 1. Fundamentos
 
 Introducción, IA vs ML vs DL, ¿Por qué DL ahora? ([video](https://www.youtube.com/watch?v=BASByOlqqkc&list=PLBjZ-ginWc1e0_Dp4heHglsjJmacV_F20&index=1))
 
-##### 1.1. Redes neuronales modernas
+#### 1.1. Redes neuronales modernas
 
 * Perceptrón, funciones de activación, y representación matricial ([video](https://www.youtube.com/watch?v=mDCxK2Pu0mA&list=PLBjZ-ginWc1e0_Dp4heHglsjJmacV_F20&index=2))
 * UAT, Redes Feed-Forward, y función de salida (softmax) ([video](https://www.youtube.com/watch?v=eV-N1ozcZrk&list=PLBjZ-ginWc1e0_Dp4heHglsjJmacV_F20&index=3))
@@ -26,7 +26,7 @@ Introducción, IA vs ML vs DL, ¿Por qué DL ahora? ([video](https://www.youtube
 
 Readings: [Chapter 2. Lineal Algebra](http://www.deeplearningbook.org/contents/linear_algebra.html), [Chapter 3. Probability and Information Theory](http://www.deeplearningbook.org/contents/prob.html), [Chapter 6. Deep Feedforward Networks](http://www.deeplearningbook.org/contents/mlp.html)
 
-##### 1.2. Entrenamiento, Aprendizaje, Regularización y Optimización
+#### 1.2. Entrenamiento, Aprendizaje, Regularización y Optimización
 
 * Descenso de gradiente estocástico
 * Inicialización de parámetros, normalización, normalización de paquetes
@@ -37,13 +37,13 @@ Readings: [Chapter 2. Lineal Algebra](http://www.deeplearningbook.org/contents/l
 
 Readings: [Chapter 7. Regularization for Deep Learning](http://www.deeplearningbook.org/contents/regularization.html), [Chapter 8. Optimization for Training DeepModels](http://www.deeplearningbook.org/contents/optimization.html), [Chapter 11. Practical Methodology](http://www.deeplearningbook.org/contents/guidelines.html)
 
-#### 2. Redes Neuronales Convolucionales (CNN)
+### 2. Redes Neuronales Convolucionales (CNN)
 
 * Arquitecturas más conocidas: AlexNet, VGG, InceptionNet, ResNet, DenseNet
 
 Readings: [Chapter 9. Convolutional Networks](http://www.deeplearningbook.org/contents/convnets.html), [Chapter 12. Applications](http://www.deeplearningbook.org/contents/applications.html)
 
-#### 3. Redes Neuronales Recurrentes (RNN)
+### 3. Redes Neuronales Recurrentes (RNN)
 
 * Backpropagation en el tiempo 
 * Redes recurrentes bidireccionales
@@ -53,7 +53,7 @@ Readings: [Chapter 9. Convolutional Networks](http://www.deeplearningbook.org/co
 
 Readings: [Chapter 10. Sequence Modeling: Recurrentand Recursive Nets](http://www.deeplearningbook.org/contents/rnn.html), [Chapter 12. Applications](http://www.deeplearningbook.org/contents/applications.html)
 
-#### 4. Tópicos avanzados
+### 4. Tópicos avanzados
 
 * Introducción a los Modelos Generativos.
 * Autoencoders
