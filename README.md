@@ -89,8 +89,8 @@ Readings: [Chapter 14. Autoencoders](http://www.deeplearningbook.org/contents/au
 
 ## Videos
 1. [Visualizing and Understanding Recurrent Networks](https://skillsmatter.com/skillscasts/6611-visualizing-and-understanding-recurrent-networks)
-2. [More on Transformers: BERT and Friends] by Jorge Pérez (https://tv.vera.com.uy/video/55388)
-3. [Atención neuronal y el transformer] by Jorge Pérez (https://www.youtube.com/watch?v=4cY1H-QVlZM)
+2. [More on Transformers: BERT and Friends](https://tv.vera.com.uy/video/55388) by Jorge Pérez
+3. [Atención neuronal y el transformer](https://www.youtube.com/watch?v=4cY1H-QVlZM) by Jorge Pérez
 
 ## Otras Fuentes
 1. [How To Improve Deep Learning Performance](https://machinelearningmastery.com/improve-deep-learning-performance/)
