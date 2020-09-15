@@ -86,11 +86,11 @@ Readings: [Chapter 14. Autoencoders](http://www.deeplearningbook.org/contents/au
 2. [Deep learning course on Coursera](https://www.coursera.org/specializations/deep-learning) by Andrew Ng
 3. [CS231n course](http://cs231n.stanford.edu/) by Stanford University
 4. [Courses](http://www.fast.ai/) by fast.ai
-5. 
 
 ## Videos
 1. [Visualizing and Understanding Recurrent Networks](https://skillsmatter.com/skillscasts/6611-visualizing-and-understanding-recurrent-networks)
-2. [More on Transformers: BERT and Friends](https://tv.vera.com.uy/video/55388)
+2. [More on Transformers: BERT and Friends] by Jorge Pérez (https://tv.vera.com.uy/video/55388)
+3. [Atención neuronal y el transformer] by Jorge Pérez (https://www.youtube.com/watch?v=4cY1H-QVlZM)
 
 ## Otras Fuentes
 1. [How To Improve Deep Learning Performance](https://machinelearningmastery.com/improve-deep-learning-performance/)
