@@ -11,6 +11,9 @@ __tests_expected = {}
 
 
 def getter(question_number, test_number, test_set, code):
+    if not test_set:
+        load_tests()
+
     if question_number not in test_set:
         raise Container(error(
             f"Question {question_number} not found in homework", code))
