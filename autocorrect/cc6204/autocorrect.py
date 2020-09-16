@@ -40,8 +40,8 @@ class AutoCorrect:
             self,
             homework: int,
             question: str,
-            token: str,
             test: int,
+            token: str,
             answer):
         if isinstance(answer, (np.ndarray, torch.Tensor)):
             answer = answer.tolist()
