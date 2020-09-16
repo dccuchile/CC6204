@@ -1,5 +1,3 @@
-import os
-
 from flask import Flask, request
 
 import src.homeworks.homework1 as homework1
@@ -27,7 +25,8 @@ class PreFlask(Flask):
         super().run(*args, **kwargs)
 
 
-app = PreFlask(__name__)
+app = PreFlask(__name__, instance_relative_config=True)
+app.config.from_pyfile("configs.cfg")
 
 
 @app.route("/ping")
@@ -43,7 +42,7 @@ def reload_tests(homework_number):
     data = request.get_json()
     if "token" not in data:
         return error("The token is not included", "token_missing")
-    if data["token"] != os.environ["ADMIN_TOKEN"]:
+    if data["token"] != app.config["ADMIN_TOKEN"]:
         return error("The token is not correct/is invalid", "token_wrong")
     if homework_number not in available_homeworks:
         return error(f"There is no homework {homework_number}", "no_homework")
@@ -61,7 +60,7 @@ def autocheck(homework_number, question_number):
     data = request.get_json()
     if "token" not in data:
         return error("The token is not included", "token_missing")
-    if data["token"] != os.environ["TOKEN"]:
+    if data["token"] != app.config["TOKEN"]:
         return error("The token is not correct/is invalid", "token_wrong")
     if homework_number not in available_homeworks:
         return error(f"There is no homework {homework_number}", "no_homework")
@@ -79,7 +78,7 @@ def process(homework_number, question_number):
     data = request.args
     if "token" not in data:
         return error("The token is not included", "token_missing")
-    if data["token"] != os.environ["TOKEN"]:
+    if data["token"] != app.config["TOKEN"]:
         return error("The token is not correct/is invalid", "token_wrong")
     if homework_number not in available_homeworks:
         return error(f"There is no homework {homework_number}", "no_homework")
