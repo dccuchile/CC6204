@@ -32,7 +32,8 @@ app = PreFlask(__name__)
 
 @app.route("/ping")
 def ping():
-    return {"message": "Not yet ready."}
+    # return {"message": "Not yet ready."}
+    return "OK"
 
 
 @app.route("/force_reload/<string:homework_number>", methods=["POST"])
