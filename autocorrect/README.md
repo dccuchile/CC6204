@@ -85,3 +85,20 @@ if revision is not None:
     print(revision)
 # if revision is None, then a "Correct Test!" printed in console and your implementation passed the test
 ```
+
+You can use the FailedTest `mask` field to get the exact values where the Autocorrect Server deemed your answer wrong. You can print the `mask` and get an overview of the correct and incorrect values, or you could filter only the wrong values using the following code:
+```python
+try:
+    corrector.sumbit(homework=1, question="2b", test=3, token=<token>, answer=my_answer)
+except FailedTest as e:
+    # this is a mask with the values you missed
+    mask = e.mask
+    mask = torch.tensor(mask)
+
+    print(my_answer[~mask])
+```
+
+### Things to rememeber
+
+Remember that the `test_data` returned by `get_test_data` can consist of multiple arguments that are expected you pass to your function. Also remember that the numerical data to be passed to you function comes as a Python `list`. Your function probably expects a tensor, so you must convert it to a Pytorch tensor first `test_data = torch.tensor(test_data)`.
+The autocorrect function `sumbit` accepts multiple datatypes as an answer, so you do not need to convert your Pytorch tensor to list.
