@@ -8,11 +8,11 @@
 ### Semana 2
 
 * Cátedra: UAT, Redes Feed-Forward, y función de salida (softmax)
-* Auxiliar: Colab, Pytorch y Tensores, una introducción práctica.
+* Auxiliar: Colab, Pytorch y Tensores, una introducción práctica ([video](https://www.youtube.com/watch?v=gjTV_7X2O9Y&feature=youtu.be))
 
 ### Semana 3
 
-* Cátedra: Backpropagation
+* Cátedra: Descenso de Gradiente para encontrar los parámetros de una red
 * Catedra: Tensores
 
 ### Semana 4
