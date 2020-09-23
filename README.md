@@ -3,7 +3,7 @@
 Curso introductorio al área de aprendizaje basado en redes neuronales profundas, comúnmente conocida como Deep Learning. Durante el curso aprenderán la teoría detrás de los modelos de Deep Learning, su funcionamiento y usos posibles. Serán capaces de construir y entrenar modelos para resolver problemas reales.
 
 * Profesor: [Jorge Pérez](https://users.dcc.uchile.cl/~jperez/)
-* Auxiliares: [Gabriel Chaperon](https://avatars3.githubusercontent.com/u/21991723?s=64&v=4), [Ho Jin Kang](https://github.com/hojink1996), [Juan-Pablo Silva](https://github.com/juanpablos), [Mauricio Romero](https://github.com/fluowhy), [Jesús Pérez-Martín](https://jssprz.github.io/)
+* Auxiliares: [Gabriel Chaperon](https://github.com/gchaperon), [Ho Jin Kang](https://github.com/hojink1996), [Juan-Pablo Silva](https://github.com/juanpablos), [Mauricio Romero](https://github.com/fluowhy), [Jesús Pérez-Martín](https://jssprz.github.io/)
 * Versiones anteriores del curso: [Otoño 2018](versiones_anteriores/2018), [Primavera 2019](versiones_anteriores/2019)
 
 ### Primavera 2020

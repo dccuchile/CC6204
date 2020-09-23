@@ -11,14 +11,14 @@ _nested = lambda: defaultdict(_nested)
 
 
 class AutoCorrect:
-    all_test_data = _nested()
+    _all_test_data = _nested()
 
     def __init__(self, host: str, port: Union[int, str]):
         self.host = host
         self.port = port
 
         try:
-            val = requests.get(f"http://{self.host}:{self.port}/ping").json()
+            val = requests.get(f"https://{self.host}:{self.port}/ping")
         except requests.exceptions.ConnectionError:
             raise LibraryError(
                 "Connection could not be stablished. Contact JP") from None
@@ -26,15 +26,22 @@ class AutoCorrect:
             raise LibraryError(
                 "Unknown Error occurred. Contact JP") from None
         else:
-            if "msg" in val:
-                raise MessageFromServer(val["msg"])
+            try:
+                val = val.json()
+            except BaseException:
+                print("Connection stablished")
+            else:
+                if "message" in val:
+                    raise MessageFromServer(val["message"])
+                else:
+                    raise MessageFromServer(val)
 
     def sumbit(
             self,
             homework: int,
             question: str,
-            token: str,
             test: int,
+            token: str,
             answer):
         if isinstance(answer, (np.ndarray, torch.Tensor)):
             answer = answer.tolist()
@@ -46,7 +53,7 @@ class AutoCorrect:
 
         try:
             response = requests.post(
-                f"http://{self.host}:{self.port}/api/autocheck/{homework}/{question}",
+                f"https://{self.host}:{self.port}/api/autocheck/{homework}/{question}",
                 json={
                     "token": token,
                     "test": test,
@@ -82,12 +89,12 @@ class AutoCorrect:
             question: str,
             test: int,
             token: str):
-        try:
-            data = self.all_test_data[homework][question][test]
-        except KeyError:
+
+        data = self._all_test_data[homework][question][test]
+        if not data:
             try:
                 response = requests.get(
-                    f'http://{self.host}:{self.port}/api/tests/{homework}/{question}',
+                    f'https://{self.host}:{self.port}/api/tests/{homework}/{question}',
                     params={
                         "token": token,
                         "test": test}).json()
@@ -105,7 +112,7 @@ class AutoCorrect:
                     raise UserError(**response["error"])
 
                 data = response["data"]
-                self.all_test_data[homework][question][test] = data
+                self._all_test_data[homework][question][test] = data
         else:
             print("Using cached test data")
 

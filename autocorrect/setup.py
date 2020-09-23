@@ -1,11 +1,21 @@
+import re
+
 import setuptools
 
-with open("README.md", "r") as f:
-    long_description = f.read()
+VERSIONFILE = "cc6204/_version.py"
+verstrline = open(VERSIONFILE, "r").read()
+VSRE = r"^__version__ = ['\"]([^'\"]*)['\"]"
+mo = re.search(VSRE, verstrline, re.M)
+if mo:
+    verstr = mo.group(1)
+else:
+    raise RuntimeError(f"Unable to find version string in {VERSIONFILE}.")
+
+long_description = open("README.md", "r").read()
 
 setuptools.setup(
     name="cc6204",
-    version="0.2.0",
+    version=verstr,
     author="Juan-Pablo Silva",
     author_email="jpsilva@dcc.uchile.cl",
     description="Basic autocorrector for CC6204",

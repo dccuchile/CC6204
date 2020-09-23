@@ -11,6 +11,9 @@ __tests_expected = {}
 
 
 def getter(question_number, test_number, test_set, code):
+    if not test_set:
+        load_tests()
+
     if question_number not in test_set:
         raise Container(error(
             f"Question {question_number} not found in homework", code))
@@ -47,12 +50,20 @@ def get_test(question_number, test_number):
 
 
 def load_tests():
-    with open("./data/homeworks/1.json", "r") as f:
+    with open("./tests/hw1.json", "r") as f:
         data = json.load(f)
 
     __tests_data.update(data["input"])
     expected = data["expected"]
 
     for question, tests in expected.items():
+        if question not in __tests_expected:
+            __tests_expected[question] = {}
         for test, values in tests.items():
             __tests_expected[question][test] = np.array(values)
+
+
+def reload_tests():
+    __tests_data.clear()
+    __tests_expected.clear()
+    load_tests()

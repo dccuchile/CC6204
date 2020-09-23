@@ -3,10 +3,9 @@ from flask import Flask, request
 import src.homeworks.homework1 as homework1
 from src.handler import error
 
-app = Flask(__name__)
 
 available_homeworks = {
-    1: homework1
+    "1": homework1
 }
 
 
@@ -19,15 +18,49 @@ def load_tests():
             raise e
 
 
-@app.route("/api/autocheck/<str:homework_number>/<str:question_number>",
-           methods=["POST"])  # type:ignore
+class PreFlask(Flask):
+    def run(self, *args, **kwargs):
+        with self.app_context():
+            load_tests()
+        super().run(*args, **kwargs)
+
+
+app = PreFlask(__name__, instance_relative_config=True)
+app.config.from_pyfile("configs.cfg")
+
+
+@app.route("/ping")
+def ping():
+    # return {"message": "Not yet ready."}
+    return "OK"
+
+
+@app.route("/force_reload/<string:homework_number>", methods=["POST"])
+def reload_tests(homework_number):
+    if not request.is_json:
+        return error("Sent format is not a json", "json")
+    data = request.get_json()
+    if "token" not in data:
+        return error("The token is not included", "token_missing")
+    if data["token"] != app.config["ADMIN_TOKEN"]:
+        return error("The token is not correct/is invalid", "token_wrong")
+    if homework_number not in available_homeworks:
+        return error(f"There is no homework {homework_number}", "no_homework")
+
+    available_homeworks[homework_number].reload_tests()
+
+    return "OK"
+
+
+@app.route("/api/autocheck/<string:homework_number>/<string:question_number>",
+           methods=["POST"])
 def autocheck(homework_number, question_number):
     if not request.is_json:
         return error("Sent format is not a json", "json")
     data = request.get_json()
     if "token" not in data:
         return error("The token is not included", "token_missing")
-    if data["token"] != "mytoken":
+    if data["token"] != app.config["TOKEN"]:
         return error("The token is not correct/is invalid", "token_wrong")
     if homework_number not in available_homeworks:
         return error(f"There is no homework {homework_number}", "no_homework")
@@ -39,13 +72,13 @@ def autocheck(homework_number, question_number):
         question_number, str(data["test"]), data["answer"])
 
 
-@app.route("/api/tests/<str:homework_number>/<str:question_number>",
-           methods=["GET"])  # type:ignore
+@app.route("/api/tests/<string:homework_number>/<string:question_number>",
+           methods=["GET"])
 def process(homework_number, question_number):
     data = request.args
     if "token" not in data:
         return error("The token is not included", "token_missing")
-    if data["token"] != "mytoken":
+    if data["token"] != app.config["TOKEN"]:
         return error("The token is not correct/is invalid", "token_wrong")
     if homework_number not in available_homeworks:
         return error(f"There is no homework {homework_number}", "no_homework")
@@ -56,5 +89,4 @@ def process(homework_number, question_number):
 
 
 if __name__ == '__main__':
-    load_tests()
     app.run(host='0.0.0.0')
