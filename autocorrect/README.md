@@ -5,9 +5,13 @@ Basic tooling for autocorrecting programming homeworks for the CC6204: Deep Lear
 ## Instalation
 
 Install either with
-`pip install "git+https://github.com/dccuchile/CC6204.git@master#egg=cc6204&subdirectory=autocorrect"`
+```
+pip install "git+https://github.com/dccuchile/CC6204.git@master#egg=cc6204&subdirectory=autocorrect"
+```
 or with
-`pip install "https://github.com/dccuchile/CC6204/archive/master.zip#subdirectory=autocorrect"`
+```
+pip install "https://github.com/dccuchile/CC6204/archive/master.zip#subdirectory=autocorrect"
+```
 
 ## Usage
 ### Instantiate a corrector object:
@@ -83,7 +87,7 @@ except FailedTest as e:
 if revision is not None:
     # you made mistakes
     print(revision)
-# if revision is None, then a "Correct Test!" printed in console and your implementation passed the test
+# if revision is None, then a "Correct Test!" string is printed to console, your implementation passed the test
 ```
 
 You can use the FailedTest `mask` field to get the exact values where the Autocorrect Server deemed your answer wrong. You can print the `mask` and get an overview of the correct and incorrect values, or you could filter only the wrong values using the following code:
@@ -95,10 +99,11 @@ except FailedTest as e:
     mask = e.mask
     mask = torch.tensor(mask)
 
+    # this will print only the incorrect values
     print(my_answer[~mask])
 ```
 
 ### Things to rememeber
 
-Remember that the `test_data` returned by `get_test_data` can consist of multiple arguments that are expected you pass to your function. Also remember that the numerical data to be passed to you function comes as a Python `list`. Your function probably expects a tensor, so you must convert it to a Pytorch tensor first `test_data = torch.tensor(test_data)`.
-The autocorrect function `sumbit` accepts multiple datatypes as an answer, so you do not need to convert your Pytorch tensor to list.
+Remember that the `test_data` returned by `get_test_data` can consist of multiple arguments that you should pass to your function when testing. Also remember that the numerical data to be passed to you function comes as a Python `list`. Your function probably expects a tensor, so you must convert it to a Pytorch tensor first `test_data = torch.tensor(test_data)`.
+The autocorrect function `sumbit` accepts multiple datatypes as an answer, so you do not need to convert your Pytorch tensor to list to use it.

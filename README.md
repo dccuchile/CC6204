@@ -20,8 +20,7 @@ Introducción, IA vs ML vs DL, ¿Por qué DL ahora? ([video](https://www.youtube
 
 * Perceptrón, funciones de activación, y representación matricial ([video](https://www.youtube.com/watch?v=mDCxK2Pu0mA&list=PLBjZ-ginWc1e0_Dp4heHglsjJmacV_F20&index=2))
 * UAT, Redes Feed-Forward, y función de salida (softmax) ([video](https://www.youtube.com/watch?v=eV-N1ozcZrk&list=PLBjZ-ginWc1e0_Dp4heHglsjJmacV_F20&index=3))
-* Álgebra tensorial y cálculo tensorial
-* Funciones de error/pérdida y entrenamiento por descenso de gradiente
+* Descenso de Gradiente para encontrar los parámetros de una red ([video](https://www.youtube.com/watch?v=G4dnRSSC6Kw))
 * Grafos de computación y el algoritmo de BackPropagation
 
 Readings: [Chapter 2. Lineal Algebra](http://www.deeplearningbook.org/contents/linear_algebra.html), [Chapter 3. Probability and Information Theory](http://www.deeplearningbook.org/contents/prob.html), [Chapter 6. Deep Feedforward Networks](http://www.deeplearningbook.org/contents/mlp.html)
