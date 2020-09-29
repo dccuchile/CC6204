@@ -42,7 +42,8 @@ class AutoCorrect:
             question: str,
             test: str,
             token: str,
-            answer):
+            answer,
+            **kwargs):
         if isinstance(answer, (np.ndarray, torch.Tensor)):
             answer = answer.tolist()
         elif not isinstance(answer, list):
@@ -55,6 +56,7 @@ class AutoCorrect:
             response = requests.post(
                 f"https://{self.host}:{self.port}/api/autocheck/{homework}/{question}",
                 json={
+                    **kwargs,
                     "token": token,
                     "test": str(test),
                     "answer": answer}).json()
