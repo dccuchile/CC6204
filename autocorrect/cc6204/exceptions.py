@@ -4,7 +4,7 @@ class UserError(Exception):
         self.text = text
 
     def __str__(self):
-        return f"UserError with code {self.code}: {self.text}"
+        return f"UserError with code `{self.code}`: {self.text}"
 
 
 class FailedTest(Exception):
