@@ -28,4 +28,4 @@ def extract_argument(data, arg_name):
     try:
         return data[arg_name]
     except KeyError:
-        raise Container(error(f"Missing argument {arg_name}", "missing_arg"))
+        raise Container(error(f"Missing argument `{arg_name}`", "missing_arg"))

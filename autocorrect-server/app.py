@@ -61,8 +61,7 @@ def autocheck(homework_number, question_number):
     data = request.get_json()
     if "token" not in data:
         return error("The token is not included", "token_missing")
-    token = data.pop("token")
-    if token != app.config["TOKEN"]:
+    if data["token"] != app.config["TOKEN"]:
         return error("The token is not correct/is invalid", "token_wrong")
     if homework_number not in available_homeworks:
         return error(f"There is no homework {homework_number}", "no_homework")
@@ -78,8 +77,7 @@ def process(homework_number, question_number):
     data = request.args
     if "token" not in data:
         return error("The token is not included", "token_missing")
-    token = data.pop("token")
-    if token != app.config["TOKEN"]:
+    if data["token"] != app.config["TOKEN"]:
         return error("The token is not correct/is invalid", "token_wrong")
     if homework_number not in available_homeworks:
         return error(f"There is no homework {homework_number}", "no_homework")
