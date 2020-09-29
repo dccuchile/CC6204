@@ -40,7 +40,7 @@ class AutoCorrect:
             self,
             homework: int,
             question: str,
-            test: int,
+            test: str,
             token: str,
             answer):
         if isinstance(answer, (np.ndarray, torch.Tensor)):
@@ -56,7 +56,7 @@ class AutoCorrect:
                 f"https://{self.host}:{self.port}/api/autocheck/{homework}/{question}",
                 json={
                     "token": token,
-                    "test": test,
+                    "test": str(test),
                     "answer": answer}).json()
         except requests.exceptions.ConnectionError:
             raise LibraryError(
@@ -87,7 +87,7 @@ class AutoCorrect:
             self,
             homework: int,
             question: str,
-            test: int,
+            test: str,
             token: str):
 
         data = self._all_test_data[homework][question][test]
@@ -97,7 +97,7 @@ class AutoCorrect:
                     f'https://{self.host}:{self.port}/api/tests/{homework}/{question}',
                     params={
                         "token": token,
-                        "test": test}).json()
+                        "test": str(test)}).json()
             except requests.exceptions.ConnectionError:
                 raise LibraryError(
                     "Connection could not be stablished. Contact JP") from None
