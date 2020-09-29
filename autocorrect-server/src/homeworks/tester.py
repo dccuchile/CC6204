@@ -14,7 +14,7 @@ def numpy_isclose(true_values, student_values):
             "Dimensions does not match. "
             f"Expected: {true_values.shape}, Given: {student.shape}")
 
-    result = np.isclose(true_values, student)
+    result = np.isclose(student, true_values)
     status = int(np.all(result))
     comments = f"{result.sum() / result.size}% correct"
 
