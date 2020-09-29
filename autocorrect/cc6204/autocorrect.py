@@ -59,7 +59,7 @@ class AutoCorrect:
                     **kwargs,
                     "token": token,
                     "test": str(test),
-                    "answer": answer}).json()
+                    "student_answer": answer}).json()
         except requests.exceptions.ConnectionError:
             raise LibraryError(
                 "Connection could not be stablished. Contact JP") from None
