@@ -29,11 +29,14 @@ def check(question_number, data):
 
         try:
             value_status, value_result, value_comments = numpy_isclose(
+                expected_value,
                 student_answer,
-                expected_value)
+                msg="value",
+                equal_nan=True)
             time_status, time_result, time_comments = simple_max_value(
+                expected_time,
                 student_time,
-                expected_time)
+                msg="time")
         except InvalidInput as e:
             return error(message=e.msg, code="invalid_input")
         else:

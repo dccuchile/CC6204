@@ -24,7 +24,10 @@ def check(question_number, data):
             "test_output")
 
         try:
-            status, result, comments = numpy_isclose(value, student_answer)
+            status, result, comments = numpy_isclose(
+                value,
+                student_answer,
+                msg="value")
         except InvalidInput as e:
             return error(message=e.msg, code="invalid_input")
         else:
