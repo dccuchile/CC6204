@@ -1,34 +1,22 @@
-import json
-
-import numpy as np
-
 from src.errors import Container, InvalidInput
 from src.handler import error, send_results, send_test
 from src.homeworks.tester import numpy_isclose
+from src.homeworks.utils import load_tests_path, test_getter
 
 __tests_data = {}
 __tests_expected = {}
 
 
-def getter(question_number, test_number, test_set, code):
-    if not test_set:
+def check(question_number, test_number, student_answer):
+    if not __tests_expected:
         load_tests()
 
-    if question_number not in test_set:
-        raise Container(error(
-            f"Question {question_number} not found in homework", code))
-    if test_number not in test_set[question_number]:
-        raise Container(
-            error(
-                f"Test {test_number} not found in Question {question_number}",
-                code))
-    return test_set[question_number][test_number]
-
-
-def check(question_number, test_number, student_answer):
     try:
-        value = getter(question_number, test_number,
-                       __tests_expected, "test_output")
+        value = test_getter(
+            question_number,
+            test_number,
+            __tests_expected,
+            "test_output")
     except Container as e:
         return e.data
 
@@ -41,8 +29,14 @@ def check(question_number, test_number, student_answer):
 
 
 def get_test(question_number, test_number):
+    if not __tests_data:
+        load_tests()
     try:
-        value = getter(question_number, test_number, __tests_data, "test_data")
+        value = test_getter(
+            question_number,
+            test_number,
+            __tests_data,
+            "test_data")
     except Container as e:
         return e.data
     else:
@@ -50,17 +44,10 @@ def get_test(question_number, test_number):
 
 
 def load_tests():
-    with open("./tests/hw1.json", "r") as f:
-        data = json.load(f)
-
-    __tests_data.update(data["input"])
-    expected = data["expected"]
-
-    for question, tests in expected.items():
-        if question not in __tests_expected:
-            __tests_expected[question] = {}
-        for test, values in tests.items():
-            __tests_expected[question][test] = np.array(values)
+    load_tests_path(
+        "./tests/hw1.json",
+        test_data=__tests_data,
+        test_expected=__tests_expected)
 
 
 def reload_tests():
