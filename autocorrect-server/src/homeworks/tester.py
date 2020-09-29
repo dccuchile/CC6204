@@ -4,17 +4,17 @@ from src.errors import InvalidInput
 
 
 def numpy_isclose(true_values, student_values):
-    true = np.array(true_values)
-
     try:
         student = np.array(student_values)
     except BaseException as e:
         raise InvalidInput(e.args)
 
-    if true.shape != student.shape:
-        raise InvalidInput("Dimensions does not match")
+    if true_values.shape != student.shape:
+        raise InvalidInput(
+            "Dimensions does not match. "
+            f"Expected: {true_values.shape}, Given: {student.shape}")
 
-    result = np.isclose(true, student)
+    result = np.isclose(true_values, student)
     status = int(np.all(result))
     comments = f"{result.sum() / result.size}% correct"
 
