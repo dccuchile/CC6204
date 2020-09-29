@@ -46,10 +46,10 @@ class AutoCorrect:
             **kwargs):
         if isinstance(answer, (np.ndarray, torch.Tensor)):
             answer = answer.tolist()
-        elif not isinstance(answer, list):
+        elif not isinstance(answer, (list, int, float)):
             raise ValueError(
                 "Supported submit values are numpy array, "
-                "torch tensors and python lists. "
+                "torch tensors, python lists and int/floats. "
                 f"Answer type is: {type(answer)}")
 
         try:
