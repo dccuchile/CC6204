@@ -2,8 +2,8 @@ import json
 
 import numpy as np
 
+from src.errors import Container, InvalidInput
 from src.handler import error, send_results, send_test
-from src.homeworks.errors import Container, InvalidInput
 from src.homeworks.tester import numpy_isclose
 
 __tests_data = {}

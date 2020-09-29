@@ -1,6 +1,6 @@
 import numpy as np
 
-from src.homeworks.errors import InvalidInput
+from src.errors import InvalidInput
 
 
 def numpy_isclose(true_values, student_values):
