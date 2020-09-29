@@ -60,16 +60,15 @@ def autocheck(homework_number, question_number):
     data = request.get_json()
     if "token" not in data:
         return error("The token is not included", "token_missing")
-    if data["token"] != app.config["TOKEN"]:
+    token = data.pop("token")
+    if token != app.config["TOKEN"]:
         return error("The token is not correct/is invalid", "token_wrong")
     if homework_number not in available_homeworks:
         return error(f"There is no homework {homework_number}", "no_homework")
-    if "answer" not in data:
-        return error("The answer parameter is not included", "no_answer")
-    if "test" not in data:
-        return error("The test parameter is not included", "no_test")
+
     return available_homeworks[homework_number].check(
-        question_number, str(data["test"]), data["answer"])
+        question_number=question_number,
+        data=data)
 
 
 @app.route("/api/tests/<string:homework_number>/<string:question_number>",
@@ -78,14 +77,15 @@ def process(homework_number, question_number):
     data = request.args
     if "token" not in data:
         return error("The token is not included", "token_missing")
-    if data["token"] != app.config["TOKEN"]:
+    token = data.pop("token")
+    if token != app.config["TOKEN"]:
         return error("The token is not correct/is invalid", "token_wrong")
     if homework_number not in available_homeworks:
         return error(f"There is no homework {homework_number}", "no_homework")
-    if "test" not in data:
-        return error("The test parameter is not included", "no_test")
+
     return available_homeworks[homework_number].get_test(
-        question_number, str(data["test"]))
+        question_number=question_number,
+        data=data)
 
 
 if __name__ == '__main__':

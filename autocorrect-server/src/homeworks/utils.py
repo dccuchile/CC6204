@@ -1,7 +1,5 @@
 import json
 
-import numpy as np
-
 from src.errors import Container
 from src.handler import error
 
@@ -23,10 +21,11 @@ def load_tests_path(tests_path, test_data, test_expected):
         data = json.load(f)
 
     test_data.update(data["input"])
+    test_expected.update(data["expected"])
 
-    expected = data["expected"]
-    for question, tests in expected.items():
-        if question not in test_expected:
-            test_expected[question] = {}
-        for test, values in tests.items():
-            test_expected[question][test] = np.array(values)
+
+def extract_argument(data, arg_name):
+    try:
+        return data[arg_name]
+    except KeyError:
+        raise Container(error(f"Missing argument {arg_name}", "missing_arg"))
