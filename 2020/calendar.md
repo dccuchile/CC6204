@@ -13,51 +13,51 @@
 ### Semana 3
 
 * Cátedra: Descenso de Gradiente para encontrar los parámetros de una red ([video](https://www.youtube.com/watch?v=G4dnRSSC6Kw))
-* Cátedra: Tensores
+* Auxiliar: Aclaración de dudas sobre la Tarea 1
 
 ### Semana 4
 
+* Cátedra: Introducción a Backpropagation ([video](https://www.u-cursos.cl/ingenieria/2020/2/CC6204/1/enlaces/detalle?id=158504))
 * Cátedra: Backpropagation a mano + pytorch
-* Cátedra: Aspectos prácticos de entrenamiento
 
 ### Semana 5
 
+* Cátedra: Aspectos prácticos de entrenamiento
 * Cátedra: Regularización
-* Cátedra: Intro a otras arquitecturas (Convolucionales)
 
 ### Semana 6
 
+* Cátedra: Intro a otras arquitecturas (Convolucionales)
 * Cátedra: Intro a otras arquitecturas (Recurrentes)
-* Cátedra: Optimización I
 
 ### Semana 7
 
+* Cátedra: Optimización I
 * Cátedra: Optimización II
-* Cátedra: Redes Conv (AlexNet, VGG)
 
 ### Semana 8
 
+* Cátedra: Redes Conv (AlexNet, VGG)
 * Cátedra: Redes Conv (InceptionNet, ResNet, DenseNet)
-* Cátedra: Intro a recurrentes
 
 ### Semana 9
 
+* Cátedra: Intro a recurrentes
 * Cátedra: Bidirectional + Seq to Seq
-* Cátedra: GRU, LSTM, Compuertas
 
 ### Semana 10
 
+* Cátedra: GRU, LSTM, Compuertas
 * Cátedra: Atención Neuronal
-* Cátedra: Transformers
 
 ### Semana 11
 
+* Cátedra: Transformers
 * Cátedra: Graph Neural Networks 
-* Cátedra: Generative Adversarial Networks
 
 ### Semana 12
 
-* Cátedra: Avanzado
+* Cátedra: Generative Adversarial Networks
 * Cátedra: Avanzado
 
 ### Semana 13
