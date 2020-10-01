@@ -17,7 +17,7 @@
 
 ### Semana 4
 
-* Cátedra: Introducción a Backpropagation ([video](https://www.u-cursos.cl/ingenieria/2020/2/CC6204/1/enlaces/detalle?id=158504))
+* Cátedra: Introducción a Backpropagation ([video](https://www.youtube.com/watch?v=1EUAoM1EhM0))
 * Cátedra: Backpropagation a mano + pytorch
 
 ### Semana 5
