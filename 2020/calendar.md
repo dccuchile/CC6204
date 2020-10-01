@@ -18,47 +18,47 @@
 ### Semana 4
 
 * Cátedra: Introducción a Backpropagation ([video](https://www.youtube.com/watch?v=1EUAoM1EhM0))
-* Cátedra: Backpropagation a mano + pytorch
+* Cátedra: Continuación Backpropagation ([video](https://www.youtube.com/watch?v=Gp2rY7LvTyQ))
 
 ### Semana 5
 
+* Cátedra: Backpropagation a mano + pytorch
 * Cátedra: Aspectos prácticos de entrenamiento
-* Cátedra: Regularización
 
 ### Semana 6
 
+* Cátedra: Regularización
 * Cátedra: Intro a otras arquitecturas (Convolucionales)
-* Cátedra: Intro a otras arquitecturas (Recurrentes)
 
 ### Semana 7
 
+* Cátedra: Intro a otras arquitecturas (Recurrentes)
 * Cátedra: Optimización I
-* Cátedra: Optimización II
 
 ### Semana 8
 
+* Cátedra: Optimización II
 * Cátedra: Redes Conv (AlexNet, VGG)
-* Cátedra: Redes Conv (InceptionNet, ResNet, DenseNet)
 
 ### Semana 9
 
+* Cátedra: Redes Conv (InceptionNet, ResNet, DenseNet)
 * Cátedra: Intro a recurrentes
-* Cátedra: Bidirectional + Seq to Seq
 
 ### Semana 10
 
+* Cátedra: Bidirectional + Seq to Seq
 * Cátedra: GRU, LSTM, Compuertas
-* Cátedra: Atención Neuronal
 
 ### Semana 11
 
+* Cátedra: Atención Neuronal
 * Cátedra: Transformers
-* Cátedra: Graph Neural Networks 
 
 ### Semana 12
 
+* Cátedra: Graph Neural Networks 
 * Cátedra: Generative Adversarial Networks
-* Cátedra: Avanzado
 
 ### Semana 13
 
