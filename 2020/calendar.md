@@ -22,7 +22,7 @@
 
 ### Semana 5
 
-* Cátedra: Backpropagation a mano + pytorch
+* Cátedra: Tensores, Notación de Einstein, y Regla de la Cadena Tensorial ([video](https://www.youtube.com/watch?v=pLUNS_tK-K8))
 * Cátedra: Aspectos prácticos de entrenamiento
 
 ### Semana 6
