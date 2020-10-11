@@ -23,12 +23,12 @@ Introducción, IA vs ML vs DL, ¿Por qué DL ahora? ([video](https://www.youtube
 * Descenso de Gradiente para encontrar los parámetros de una red ([video](https://www.youtube.com/watch?v=G4dnRSSC6Kw))
 * Grafos de computación y el algoritmo de BackPropagation ([video1](https://www.youtube.com/watch?v=1EUAoM1EhM0), [video2](https://www.youtube.com/watch?v=Gp2rY7LvTyQ))
 * Tensores, Notación de Einstein, y Regla de la Cadena Tensorial ([video](https://www.youtube.com/watch?v=pLUNS_tK-K8))
+* Entropía Cruzada y Backpropagation a mano con Tensores ([video](https://www.youtube.com/watch?v=e_1lis8ByyI))
 
 Readings: [Chapter 2. Lineal Algebra](http://www.deeplearningbook.org/contents/linear_algebra.html), [Chapter 3. Probability and Information Theory](http://www.deeplearningbook.org/contents/prob.html), [Chapter 6. Deep Feedforward Networks](http://www.deeplearningbook.org/contents/mlp.html)
 
-#### 1.2. Entrenamiento, Aprendizaje, Regularización y Optimización
+#### 1.2. Inicialización, Regularización y Optimización
 
-* Descenso de gradiente estocástico
 * Inicialización de parámetros, normalización, normalización de paquetes
 * Aprendizaje adaptativo 
 * Dropout 
