@@ -23,32 +23,32 @@
 ### Semana 5
 
 * Cátedra: Tensores, Notación de Einstein, y Regla de la Cadena Tensorial ([video](https://www.youtube.com/watch?v=pLUNS_tK-K8))
-* Cátedra: Aspectos prácticos de entrenamiento
+* Cátedra: Entropía Cruzada y Backpropagation a mano con Tensores ([video](https://www.youtube.com/watch?v=e_1lis8ByyI))
 
 ### Semana 6
 
+* Cátedra: Aspectos prácticos de entrenamiento
 * Cátedra: Regularización
-* Cátedra: Intro a otras arquitecturas (Convolucionales)
 
 ### Semana 7
 
+* Cátedra: Intro a otras arquitecturas (Convolucionales)
 * Cátedra: Intro a otras arquitecturas (Recurrentes)
-* Cátedra: Optimización I
 
 ### Semana 8
 
+* Cátedra: Optimización I
 * Cátedra: Optimización II
-* Cátedra: Redes Conv (AlexNet, VGG)
 
 ### Semana 9
 
+* Cátedra: Redes Conv (AlexNet, VGG)
 * Cátedra: Redes Conv (InceptionNet, ResNet, DenseNet)
-* Cátedra: Intro a recurrentes
 
 ### Semana 10
 
-* Cátedra: Bidirectional + Seq to Seq
-* Cátedra: GRU, LSTM, Compuertas
+* Cátedra: Redes Recurrentes (Bidirectional + Seq to Seq)
+* Cátedra: Redes Recurrentes (GRU, LSTM, Compuertas)
 
 ### Semana 11
 
