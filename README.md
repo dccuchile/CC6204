@@ -1,6 +1,6 @@
 # CC6204 Deep Learning
 
-Curso introductorio al área de aprendizaje basado en redes neuronales profundas, comúnmente conocida como Deep Learning. Durante el curso aprenderán la teoría detrás de los modelos de Deep Learning, su funcionamiento y usos posibles. Serán capaces de construir y entrenar modelos para resolver problemas reales.
+Curso introductorio (en español) al área de aprendizaje basado en redes neuronales profundas, comúnmente conocida como Deep Learning. Durante el curso aprenderán la teoría detrás de los modelos de Deep Learning, su funcionamiento y usos posibles. Serán capaces de construir y entrenar modelos para resolver problemas reales.
 
 * Profesor: [Jorge Pérez](https://users.dcc.uchile.cl/~jperez/)
 * Auxiliares: [Gabriel Chaperon](https://github.com/gchaperon), [Ho Jin Kang](https://github.com/hojink1996), [Juan-Pablo Silva](https://github.com/juanpablos), [Mauricio Romero](https://github.com/fluowhy), [Jesús Pérez-Martín](https://jssprz.github.io/)
@@ -10,7 +10,7 @@ Curso introductorio al área de aprendizaje basado en redes neuronales profundas
 * [Calendario del curso](2020/calendar.md)
 * [YouTube playlist](https://www.youtube.com/playlist?list=PLBjZ-ginWc1e0_Dp4heHglsjJmacV_F20)
 
-## Temas
+## Organización del Curso
 
 ### 1. Fundamentos
 
@@ -29,7 +29,7 @@ Readings: [Chapter 2. Lineal Algebra](http://www.deeplearningbook.org/contents/l
 
 #### 1.2. Inicialización, Regularización y Optimización
 
-* Inicialización de parámetros, normalización, normalización de paquetes
+* Inicialización de parámetros y normalización
 * Aprendizaje adaptativo 
 * Dropout 
 * Penalización de parámetros
