@@ -27,7 +27,7 @@
 
 ### Semana 6
 
-* Cátedra: Aspectos prácticos de entrenamiento
+* Cátedra: Red FF a mano en pytorch (y la versión estilo pytorch) ([video](https://www.youtube.com/watch?v=y6aD4WG-rOw))
 * Cátedra: Regularización
 
 ### Semana 7

@@ -24,6 +24,7 @@ Introducción, IA vs ML vs DL, ¿Por qué DL ahora? ([video](https://www.youtube
 * Grafos de computación y el algoritmo de BackPropagation ([video1](https://www.youtube.com/watch?v=1EUAoM1EhM0), [video2](https://www.youtube.com/watch?v=Gp2rY7LvTyQ))
 * Tensores, Notación de Einstein, y Regla de la Cadena Tensorial ([video](https://www.youtube.com/watch?v=pLUNS_tK-K8))
 * Entropía Cruzada y Backpropagation a mano con Tensores ([video](https://www.youtube.com/watch?v=e_1lis8ByyI))
+* Aspectos prácticos de entrenamiento y Red FF a mano en pytorch ([video](https://www.youtube.com/watch?v=y6aD4WG-rOw))
 
 Readings: [Chapter 2. Lineal Algebra](http://www.deeplearningbook.org/contents/linear_algebra.html), [Chapter 3. Probability and Information Theory](http://www.deeplearningbook.org/contents/prob.html), [Chapter 6. Deep Feedforward Networks](http://www.deeplearningbook.org/contents/mlp.html)
 
