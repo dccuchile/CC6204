@@ -28,7 +28,7 @@
 ### Semana 6
 
 * Cátedra: Red FF a mano en pytorch (y la versión estilo pytorch) ([video](https://www.youtube.com/watch?v=y6aD4WG-rOw))
-* Cátedra: Regularización
+* Cátedra: Generalización, Test-Dev-Train set, e Intro. a Regularización ([video](https://www.youtube.com/watch?v=5gAJeY-HHtg))
 
 ### Semana 7
 
