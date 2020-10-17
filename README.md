@@ -30,6 +30,7 @@ Readings: [Chapter 2. Lineal Algebra](http://www.deeplearningbook.org/contents/l
 
 #### 1.2. Inicialización, Regularización y Optimización
 
+* Generalización, Test-Dev-Train set y Regularización ([video](https://www.youtube.com/watch?v=5gAJeY-HHtg)
 * Inicialización de parámetros y normalización
 * Aprendizaje adaptativo 
 * Dropout 
