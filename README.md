@@ -10,6 +10,13 @@ Curso introductorio (en español) al área de aprendizaje basado en redes neuron
 * [Calendario del curso](2020/calendar.md)
 * [YouTube playlist](https://www.youtube.com/playlist?list=PLBjZ-ginWc1e0_Dp4heHglsjJmacV_F20)
 
+## Requerimientos
+- Una cuenta de Google para usar [Google Collaboratory](https://colab.research.google.com/), o
+- Tener instalados los siguientes paquetes de Python:
+    1. [PyTorch](https://pytorch.org/)
+    2. [Numpy](https://numpy.org/)
+    3. [Jupyter Notebook](https://jupyter.org/install)
+
 ## Organización del Curso
 
 ### 1. Fundamentos
@@ -30,7 +37,7 @@ Readings: [Chapter 2. Lineal Algebra](http://www.deeplearningbook.org/contents/l
 
 #### 1.2. Inicialización, Regularización y Optimización
 
-* Generalización, Test-Dev-Train set y Regularización ([video](https://www.youtube.com/watch?v=5gAJeY-HHtg)
+* Generalización, Test-Dev-Train set y Regularización ([video](https://www.youtube.com/watch?v=5gAJeY-HHtg))
 * Inicialización de parámetros y normalización
 * Aprendizaje adaptativo 
 * Dropout 
@@ -66,10 +73,6 @@ Readings: [Chapter 10. Sequence Modeling: Recurrentand Recursive Nets](http://ww
 * CapsNet.
 
 Readings: [Chapter 14. Autoencoders](http://www.deeplearningbook.org/contents/autoencoders.html), [Chapter 20. Deep Generative Models](http://www.deeplearningbook.org/contents/generative_models.html)
-
-## Librerías que usaremos
-1. [PyTorch](https://pytorch.org/)
-2. [numpy](https://numpy.org/)
 
 ## Libros
 1. [Deep Learning](http://www.deeplearningbook.org/) by Ian Goodfellow, Yoshua Bengio and Aaron Courville (bibliografía fundamental del curso)
