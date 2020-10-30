@@ -38,9 +38,9 @@ Readings: [Chapter 2. Lineal Algebra](http://www.deeplearningbook.org/contents/l
 #### 1.2. Inicialización, Regularización y Optimización
 
 * Generalización, Test-Dev-Train set y Regularización ([video](https://www.youtube.com/watch?v=5gAJeY-HHtg))
+* Ensemble, Dropout, y Desvanecimiento de Gradiente ([video](https://www.youtube.com/watch?v=4cJlTns7noE))
 * Inicialización de parámetros y normalización
-* Aprendizaje adaptativo 
-* Dropout 
+* Aprendizaje adaptativo
 * Penalización de parámetros
 * Aspectos prácticos de entrenamiento: métricas, baselines, overfitting, underfitting
 

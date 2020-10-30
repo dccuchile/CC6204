@@ -32,40 +32,45 @@
 
 ### Semana 7
 
+* Cátedra: Ensemble, Dropout, y Desvanecimiento de Gradiente ([video](https://www.youtube.com/watch?v=4cJlTns7noE))
+* Cátedra: Inicialización, Normalización y Batch Normalization ([video](https://www.youtube.com/watch?v=izOwC2my1Kw))
+
+### Semana 8
+
 * Cátedra: Intro a otras arquitecturas (Convolucionales)
 * Cátedra: Intro a otras arquitecturas (Recurrentes)
 
-### Semana 8
+### Semana 9
 
 * Cátedra: Optimización I
 * Cátedra: Optimización II
 
-### Semana 9
+### Semana 10
 
 * Cátedra: Redes Conv (AlexNet, VGG)
 * Cátedra: Redes Conv (InceptionNet, ResNet, DenseNet)
 
-### Semana 10
+### Semana 11
 
 * Cátedra: Redes Recurrentes (Bidirectional + Seq to Seq)
 * Cátedra: Redes Recurrentes (GRU, LSTM, Compuertas)
 
-### Semana 11
+### Semana 12
 
 * Cátedra: Atención Neuronal
 * Cátedra: Transformers
 
-### Semana 12
+### Semana 13
 
 * Cátedra: Graph Neural Networks 
 * Cátedra: Generative Adversarial Networks
 
-### Semana 13
-
-* Cátedra: Avanzado
-* Cátedra: Avanzado
-
 ### Semana 14
+
+* Cátedra: Avanzado
+* Cátedra: Avanzado
+
+### Semana 15
 
 * Cátedra: Avanzado
 * Cátedra: Avanzado
