@@ -73,6 +73,8 @@ def load_tests():
 
     for question_id, tests in __tests_expected.items():
         for test_id, values in tests.items():
+            if not isinstance(values, list):
+                continue
             __tests_expected[question_id][test_id] = np.array(values)
 
 
