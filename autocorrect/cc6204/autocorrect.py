@@ -67,8 +67,7 @@ class AutoCorrect:
             raise LibraryError(
                 "Request Error. Contact JP or try again later") from None
         except BaseException:
-            raise LibraryError(
-                "Unknown Error occurred. Contact JP") from None
+            raise LibraryError("Unknown Error occurred. Contact JP")
         else:
             if "error" in response:
                 raise UserError(**response["error"])
