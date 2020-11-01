@@ -60,7 +60,15 @@ class AutoCorrect:
                     **kwargs,
                     "token": token,
                     "test": str(test),
-                    "student_answer": answer}).json()
+                    "student_answer": answer})
+
+            if response.status_code != 200:
+                raise MessageFromServer(
+                    f"Status code is not 200: {response.status_code}. Contact JP")
+
+            response = response.json()
+        except MessageFromServer as e:
+            raise e
         except requests.exceptions.ConnectionError:
             raise LibraryError(
                 "Connection could not be stablished. Contact JP") from None
@@ -94,8 +102,9 @@ class AutoCorrect:
             answer,
             **kwargs):
         warnings.warn(
-            "This method will be removed in the future, please use 'sumbit' instead.",
-            category=DeprecationWarning)
+            "Old method 'sumbit' has been renamed to 'submit', please us that instead.",
+            category=FutureWarning,
+            stacklevel=2)
         return self.submit(
             homework=homework,
             question=question,
