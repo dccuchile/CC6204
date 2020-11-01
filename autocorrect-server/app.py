@@ -2,11 +2,13 @@ from flask import Flask, request
 
 import src.homeworks.homework1 as homework1
 import src.homeworks.homework2 as homework2
+import src.homeworks.homework2 as homework3
 from src.handler import error
 
 available_homeworks = {
     "1": homework1,
-    "2": homework2
+    "2": homework2,
+    "3": homework3,
 }
 
 
