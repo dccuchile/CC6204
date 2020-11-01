@@ -1,3 +1,4 @@
+import warnings
 from collections import defaultdict
 from typing import Union
 
@@ -36,7 +37,7 @@ class AutoCorrect:
                 else:
                     raise MessageFromServer(val)
 
-    def sumbit(
+    def submit(
             self,
             homework: int,
             question: str,
@@ -83,6 +84,25 @@ class AutoCorrect:
                 raise ValueError(
                     "Something went wrong and I don't know what to do. "
                     "Contact JP.")
+
+    def sumbit(
+            self,
+            homework: int,
+            question: str,
+            test: str,
+            token: str,
+            answer,
+            **kwargs):
+        warnings.warn(
+            "This method will be removed in the future, please use 'sumbit' instead.",
+            category=DeprecationWarning)
+        return self.submit(
+            homework=homework,
+            question=question,
+            test=test,
+            token=token,
+            answer=answer,
+            **kwargs)
 
     def get_test_data(
             self,

@@ -23,7 +23,7 @@ corrector = AutoCorrect(host=<host>, port=<value>)
 
 ### Submit an answer for revision:
 ```python
-corrector.sumbit(homework=1, question="1a", test=1, token=<token>, answer=...)
+corrector.submit(homework=1, question="1a", test=1, token=<token>, answer=...)
 ```
 Submit will raise a `FailedTest` exception when the submited answer is not what we were expecting. If you want to know which values you submited were labeled incorrect, catch the exception and get the `mask` attribute as follows:
 ```python
@@ -31,7 +31,7 @@ from cc6204 import FailedTest
 
 revision = None
 try:
-    corrector.sumbit(homework=1, question="1a", test=1, token=<token>, answer=...)
+    corrector.submit(homework=1, question="1a", test=1, token=<token>, answer=...)
 except FailedTest as e:
     print(e.comments)
     revision = e.mask
@@ -78,7 +78,7 @@ Use the returned value as an input to your implementation and save the output va
 my_answer = my_implementation(test_input)
 revision = None
 try:
-    corrector.sumbit(homework=1, question="2b", test=3, token=<token>, answer=my_answer)
+    corrector.submit(homework=1, question="2b", test=3, token=<token>, answer=my_answer)
 except FailedTest as e:
     print(e.comments)
     # this is a mask with the values you missed
@@ -93,7 +93,7 @@ if revision is not None:
 You can use the FailedTest `mask` field to get the exact values where the Autocorrect Server deemed your answer wrong. You can print the `mask` and get an overview of the correct and incorrect values, or you could filter only the wrong values using the following code:
 ```python
 try:
-    corrector.sumbit(homework=1, question="2b", test=3, token=<token>, answer=my_answer)
+    corrector.submit(homework=1, question="2b", test=3, token=<token>, answer=my_answer)
 except FailedTest as e:
     # this is a mask with the values you missed
     mask = e.mask
@@ -106,4 +106,4 @@ except FailedTest as e:
 ### Things to rememeber
 
 Remember that the `test_data` returned by `get_test_data` can consist of multiple arguments that you should pass to your function when testing. Also remember that the numerical data to be passed to you function comes as a Python `list`. Your function probably expects a tensor, so you must convert it to a Pytorch tensor first `test_data = torch.tensor(test_data)`.
-The autocorrect function `sumbit` accepts multiple datatypes as an answer, so you do not need to convert your Pytorch tensor to list to use it.
+The autocorrect function `submit` accepts multiple datatypes as an answer, so you do not need to convert your Pytorch tensor to list to use it.
