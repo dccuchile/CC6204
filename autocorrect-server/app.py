@@ -2,7 +2,7 @@ from flask import Flask, request
 
 import src.homeworks.homework1 as homework1
 import src.homeworks.homework2 as homework2
-import src.homeworks.homework2 as homework3
+import src.homeworks.homework3 as homework3
 from src.handler import error
 
 available_homeworks = {
