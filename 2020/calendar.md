@@ -37,13 +37,13 @@
 
 ### Semana 8
 
-* Cátedra: Intro a otras arquitecturas (Convolucionales)
-* Cátedra: Intro a otras arquitecturas (Recurrentes)
+* Cátedra: Algoritmos de Optimización, SGD con Momentum, RMSProp, Adam ([video](https://www.youtube.com/watch?v=FBsiDndtdVg))
+* Cátedra: Optimización II
 
 ### Semana 9
 
-* Cátedra: Optimización I
-* Cátedra: Optimización II
+* Cátedra: Intro a otras arquitecturas (Convolucionales)
+* Cátedra: Intro a otras arquitecturas (Recurrentes)
 
 ### Semana 10
 
