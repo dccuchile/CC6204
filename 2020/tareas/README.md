@@ -11,3 +11,12 @@ Las preguntas de la tarea tienen instrucciones incluidas. Léanlas con cuidadosa
 ## Tarea 3: Regularización y Optimización
 * [Hoja de preguntas](https://colab.research.google.com/drive/1KT7X9npOInkBzPdgwdqjA76Sbc6ieM6P)
 * Hoja para sus respuestas (próximamente)
+
+## Tarea 4: Redes Convolucionales
+(próximamente)
+
+## Tarea 5: 
+(próximamente)
+
+## Tarea 6:
+(próximamente)
