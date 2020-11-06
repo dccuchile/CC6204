@@ -1,4 +1,4 @@
-Las preguntas de la tarea tienen instrucciones incluidas. Léanlas con cuidadosamente (en los notebooks **Hoja de preguntas**). Para sus respuestas y corrección les hemos incluido notbooks con tests automáticos implementados (**Hoja para sus respuestas**).
+Las preguntas de la tarea tienen instrucciones incluidas. Léanlas con cuidadosamente (en los notebooks *Hoja de preguntas*). Para sus respuestas y corrección les hemos incluido notebooks con tests automáticos implementados (*Hoja para sus respuestas*).
 
 ## Tarea 1: Activaciones y pasada hacia adelante en una red neuronal
 * [Hoja de preguntas](https://colab.research.google.com/drive/1aeuSRjj_kQ_uFEBSJ9bRuyr4G4MY4FAi)
