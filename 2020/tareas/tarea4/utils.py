@@ -90,18 +90,19 @@ def compute_ranks_x2y(x, y):
   return ranks
 
 
-def train4retrieval(net, train_loader, test_loader, optimizer, criterion, epochs=1, reports_every=1, device='cuda', norm=True):
+def train4retrieval(img_net, text_net, train_loader, test_loader, optimizer, criterion, epochs=1, reports_every=1, device='cuda', norm=True):
   net.to(device)
   total_train = len(train_loader.dataset)
   total_test = len(test_loader.dataset)
   tiempo_epochs = 0
   train_loss, train_meanr, test_meanr = [], [], []
 
-  for e in range(1,epochs+1):  
+  for e in range(1,epochs+1):
     inicio_epoch = timer()
-    
+
     # Aseguramos que todos los parámetros se entrenarán usando .train()
-    net.train()
+    img_net.train()
+    text_net.train()
 
     # Variables para las métricas
     running_loss, running_meanr = 0.0, 0.0
@@ -117,8 +118,12 @@ def train4retrieval(net, train_loader, test_loader, optimizer, criterion, epochs
       # la loss, ejecutamos el backpropagation (.backward) 
       # y un paso del optimizador para modificar los parámetros
       optimizer.zero_grad()
-      encoding, _ = net(a)
-      loss = criterion(encoding, p, n)
+
+      a_enc = img_net(a)
+      p_enc = text_net(p)
+      n_enc = text_net(n)
+
+      loss = criterion(a_enc, p_enc, n_enc)
       loss.backward()
       optimizer.step()
 
@@ -126,7 +131,7 @@ def train4retrieval(net, train_loader, test_loader, optimizer, criterion, epochs
       items = min(total_train, (i+1) * train_loader.batch_size)
       running_loss += loss.item()
       avg_loss = running_loss/(i+1)
-      
+
       # mean-rank
       ranks = compute_ranks_x2y(encoding, p)
       running_meanr += (ranks.mean()/len(a))
@@ -141,15 +146,20 @@ def train4retrieval(net, train_loader, test_loader, optimizer, criterion, epochs
       sys.stdout.write(', Validating...')
       train_loss.append(avg_loss)
       train_meanr.append(avg_meanr)
-      net.eval()
+
+      img_net.eval()
+      text_net.eval()
+
       running_meanr = 0.0
       for i, data in enumerate(test_loader):
         a, p, _ = data
         a, p = a.to(device), p.to(device)
-        encoding, _ = net(a)
+
+        a_enc = img_net(a)
+        p_enc = text_net(p)
 
         # mean-rank
-        ranks = compute_ranks_x2y(encoding, p)
+        ranks = compute_ranks_x2y(a_enc, p_enc)
         running_meanr += (ranks.mean()/len(a))
         avg_meanr = running_meanr/(i+1)
       test_meanr.append(avg_meanr)
