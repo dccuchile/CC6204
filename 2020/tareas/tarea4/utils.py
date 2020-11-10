@@ -6,6 +6,13 @@ import numpy as np
 from scipy.spatial import distance
 
 
+def l2norm(X):
+    """L2-normalize columns of X
+    """
+    norm = np.linalg.norm(X, axis=1, keepdims=True)
+    return 1.0 * X / norm
+
+
 def train4classification(net, train_loader, test_loader, optimizer, criterion, epochs=1, reports_every=1, device='cuda'):
   net.to(device)
   total_train = len(train_loader.dataset)
@@ -82,7 +89,8 @@ def compute_ranks_x2y(x, y):
     ranks[i] = rank
   return ranks
 
-def train4retrieval(net, train_loader, test_loader, optimizer, criterion, epochs=1, reports_every=1, device='cuda'):
+
+def train4retrieval(net, train_loader, test_loader, optimizer, criterion, epochs=1, reports_every=1, device='cuda', norm=True):
   net.to(device)
   total_train = len(train_loader.dataset)
   total_test = len(test_loader.dataset)
@@ -101,6 +109,7 @@ def train4retrieval(net, train_loader, test_loader, optimizer, criterion, epochs
     for i, data in enumerate(train_loader):
       # Desagregamos los datos y los pasamos a la GPU
       a, p, n = data
+      a, p, n = l2norm(a), l2norm(p), l2norm(n)
       a, p, n = a.to(device), p.to(device), n.to(device)
 
       # Limpiamos los gradientes, pasamos el input por la red, calculamos
