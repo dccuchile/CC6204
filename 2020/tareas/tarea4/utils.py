@@ -109,7 +109,8 @@ def train4retrieval(net, train_loader, test_loader, optimizer, criterion, epochs
     for i, data in enumerate(train_loader):
       # Desagregamos los datos y los pasamos a la GPU
       a, p, n = data
-      a, p, n = l2norm(a), l2norm(p), l2norm(n)
+      if norm:
+        a, p, n = l2norm(a), l2norm(p), l2norm(n)
       a, p, n = a.to(device), p.to(device), n.to(device)
 
       # Limpiamos los gradientes, pasamos el input por la red, calculamos
