@@ -80,7 +80,7 @@ def train4classification(net, train_loader, test_loader, optimizer, criterion, e
 
 
 def compute_ranks_x2y(x, y):
-  dists = distance.cdist(x.cpu().detach().numpy(), y.cpu().detach().numpy(), 'euclidean')
+  dists = distance.cdist(x.cpu().numpy(), y.cpu().numpy(), 'euclidean')
   ranks = np.zeros(dists.shape[0])
   for i in range(len(ranks)):
     d_i = dists[i,:]
@@ -93,7 +93,7 @@ def compute_ranks_x2y(x, y):
 def train4retrieval(img_net, text_net, train_loader, test_loader, optimizer, criterion, epochs=1, reports_every=1, device='cuda', norm=True):
   img_net.to(device)
   text_net.to(device)
-  
+
   total_train = len(train_loader.dataset)
   total_test = len(test_loader.dataset)
   tiempo_epochs = 0
@@ -135,9 +135,10 @@ def train4retrieval(img_net, text_net, train_loader, test_loader, optimizer, cri
       avg_loss = running_loss/(i+1)
 
       # mean-rank
-      ranks = compute_ranks_x2y(encoding, p)
-      running_meanr += (ranks.mean()/len(a))
-      avg_meanr = running_meanr/(i+1)
+      with torch.no_grad():
+        ranks = compute_ranks_x2y(a_enc, p_enc)
+        running_meanr += (ranks.mean()/len(a))
+        avg_meanr = running_meanr/(i+1)
 
       # report
       sys.stdout.write(f'\rEpoch:{e}({items}/{total_train}), ' 
