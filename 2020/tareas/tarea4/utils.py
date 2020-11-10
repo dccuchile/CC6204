@@ -162,9 +162,10 @@ def train4retrieval(img_net, text_net, train_loader, test_loader, optimizer, cri
         p_enc = text_net(p)
 
         # mean-rank
-        ranks = compute_ranks_x2y(a_enc, p_enc)
-        running_meanr += (ranks.mean()/len(a))
-        avg_meanr = running_meanr/(i+1)
+        with torch.no_grad():
+          ranks = compute_ranks_x2y(a_enc, p_enc)
+          running_meanr += (ranks.mean()/len(a))
+          avg_meanr = running_meanr/(i+1)
       test_meanr.append(avg_meanr)
       sys.stdout.write(f', Val mean-rank(normalized):{avg_meanr:02.3f}.\n')
     else:
