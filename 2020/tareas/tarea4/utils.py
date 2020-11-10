@@ -91,7 +91,9 @@ def compute_ranks_x2y(x, y):
 
 
 def train4retrieval(img_net, text_net, train_loader, test_loader, optimizer, criterion, epochs=1, reports_every=1, device='cuda', norm=True):
-  net.to(device)
+  img_net.to(device)
+  text_net.to(device)
+  
   total_train = len(train_loader.dataset)
   total_test = len(test_loader.dataset)
   tiempo_epochs = 0
