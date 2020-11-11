@@ -112,7 +112,7 @@ def train_for_retrieval(img_net, text_net, train_loader, test_loader, optimizer,
   total_train = len(train_loader.dataset)
   total_test = len(test_loader.dataset)
   tiempo_epochs = 0
-  train_loss, train_meanrr, test_meanrr = [], [], []
+  train_loss, train_meanrr, test_meanrr, train_r10, test_r10 = [], [], [], [], []
 
   for e in range(1,epochs+1):
     inicio_epoch = timer()
@@ -122,7 +122,7 @@ def train_for_retrieval(img_net, text_net, train_loader, test_loader, optimizer,
     text_net.train()
 
     # Variables para las métricas
-    running_loss, running_meanrr = 0.0, 0.0
+    running_loss, running_meanrr, running_r10 = 0.0, 0.0, 0.0
 
     for i, data in enumerate(train_loader):
       # Desagregamos los datos y los pasamos a la GPU
@@ -154,15 +154,22 @@ def train_for_retrieval(img_net, text_net, train_loader, test_loader, optimizer,
       running_meanrr += (torch.reciprocal(ranks+1).mean())
       avg_meanrr = running_meanrr/(i+1)
 
+      # recall at 10
+      r10 = 100.0 * len(torch.where(ranks < 10)[0]) / len(ranks)
+      running_r10 += r10
+      avg_r10 = running_r10/(i+1)
+
       # report
       sys.stdout.write(f'\rEpoch:{e}({items}/{total_train}), ' 
                        + f'Loss:{avg_loss:02.5f}, '
-                       + f'Train MRR:{avg_meanrr:02.3f}')
+                       + f'Train MRR:{avg_meanrr:02.3f} '
+                       + f'R@10:{avg_r10:02.3f}')
 
     if e % reports_every == 0:
       sys.stdout.write(', Validating...')
       train_loss.append(avg_loss)
       train_meanrr.append(avg_meanrr)
+      train_r10.append(avg_r10)
 
       img_net.eval()
       text_net.eval()
@@ -179,10 +186,19 @@ def train_for_retrieval(img_net, text_net, train_loader, test_loader, optimizer,
         ranks = compute_ranks_x2y(a_enc, p_enc)
         # running_meanrr += (ranks.mean()/len(a))
         running_meanrr += (torch.reciprocal(ranks+1).mean())
-        avg_meanrr = running_meanrr/(i+1)
+
+        # recall at 10
+        r10 = 100.0 * len(torch.where(ranks < 10)[0]) / len(ranks)
+        running_r10 += r10
+
+      avg_meanrr = running_meanrr/len(test_loader)
+      avg_r10 = running_r10/len(test_loader)
+
       test_meanrr.append(avg_meanrr)
-      sys.stdout.write(f', Val MRR:{avg_meanrr:02.3f}.\n')
+      test_r10.append(avg_r10)
+      sys.stdout.write(f'MRR:{avg_meanrr:02.3f} '
+                       + f'R@10:{avg_r10:02.3f}.\n')
     else:
       sys.stdout.write('\n')
 
-  return train_loss, train_meanrr, test_meanrr
+  return train_loss, (train_meanrr, test_meanrr), (train_r10, test_r10)
