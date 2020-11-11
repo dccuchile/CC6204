@@ -174,7 +174,7 @@ def train_for_retrieval(img_net, text_net, train_loader, test_loader, optimizer,
       img_net.eval()
       text_net.eval()
 
-      running_meanrr = 0.0
+      running_meanrr, running_r10 = 0.0, 0.0
       for i, data in enumerate(test_loader):
         a, p = data
         a, p = a.to(device), p.to(device)
