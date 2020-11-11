@@ -86,7 +86,7 @@ def train_for_classification(net, train_loader, test_loader, optimizer, criterio
     else:
       sys.stdout.write('\n')
 
-  return train_loss, train_acc, test_acc
+  return train_loss, (train_acc, test_acc)
 
   
 def l2norm(x):
