@@ -48,7 +48,7 @@ def train_for_classification(net, train_loader, test_loader, optimizer, criterio
       # la loss, ejecutamos el backpropagation (.backward) 
       # y un paso del optimizador para modificar los parámetros
       optimizer.zero_grad()
-      Y_logits = net(X)['fc_out']
+      Y_logits = net(X)['logits']
       loss = criterion(Y_logits, Y)
       loss.backward()
       optimizer.step()
@@ -77,7 +77,7 @@ def train_for_classification(net, train_loader, test_loader, optimizer, criterio
       for i, data in enumerate(test_loader):
         X, Y = data
         X, Y = X.to(device), Y.to(device)
-        Y_logits = net(X)['fc_out']
+        Y_logits = net(X)['logits']
         _, max_idx = torch.max(Y_logits, dim=1)
         running_acc += torch.sum(max_idx == Y).item()
         avg_acc = running_acc/total_test*100
@@ -136,8 +136,8 @@ def train_for_retrieval(img_net, text_net, train_loader, test_loader, optimizer,
       # y un paso del optimizador para modificar los parámetros
       optimizer.zero_grad()
 
-      a_enc = img_net(a)['fc_out']
-      p_enc = text_net(p)['fc_out']
+      a_enc = img_net(a)['logits']
+      p_enc = text_net(p)['logits']
 
       loss = criterion(a_enc, p_enc)
       loss.backward()
@@ -162,8 +162,8 @@ def train_for_retrieval(img_net, text_net, train_loader, test_loader, optimizer,
       # report
       sys.stdout.write(f'\rEpoch:{e}({items}/{total_train}), ' 
                        + f'Loss:{avg_loss:02.5f}, '
-                       + f'Train MRR:{avg_meanrr:02.3f} '
-                       + f'R@10:{avg_r10:02.3f}')
+                       + f'Train MRR:{avg_meanrr:02.2f} '
+                       + f'R@10:{avg_r10:02.2f}%')
 
     if e % reports_every == 0:
       sys.stdout.write(', Validating...')
@@ -179,8 +179,8 @@ def train_for_retrieval(img_net, text_net, train_loader, test_loader, optimizer,
         a, p = data
         a, p = a.to(device), p.to(device)
 
-        a_enc = img_net(a)['fc_out']
-        p_enc = text_net(p)['fc_out']
+        a_enc = img_net(a)['logits']
+        p_enc = text_net(p)['logits']
 
         # mean-rank
         ranks = compute_ranks_x2y(a_enc, p_enc)
@@ -196,8 +196,8 @@ def train_for_retrieval(img_net, text_net, train_loader, test_loader, optimizer,
 
       test_meanrr.append(avg_meanrr)
       test_r10.append(avg_r10)
-      sys.stdout.write(f'MRR:{avg_meanrr:02.3f} '
-                       + f'R@10:{avg_r10:02.3f}.\n')
+      sys.stdout.write(f'MRR:{avg_meanrr:02.2f} '
+                       + f'R@10:{avg_r10:02.2f}%.\n')
     else:
       sys.stdout.write('\n')
 
