@@ -41,14 +41,13 @@ Readings: [Chapter 2. Lineal Algebra](http://www.deeplearningbook.org/contents/l
 * Ensemble, Dropout, y Desvanecimiento de Gradiente ([video](https://www.youtube.com/watch?v=4cJlTns7noE))
 * Inicialización de parámetros y Normalización ([video](https://www.youtube.com/watch?v=izOwC2my1Kw))
 * Algoritmos de Optimización, SGD con Momentum, RMSProp, Adam ([video](https://www.youtube.com/watch?v=FBsiDndtdVg))
-* Penalización de parámetros
-* Aspectos prácticos de entrenamiento: métricas, baselines, overfitting, underfitting
 
 Readings: [Chapter 7. Regularization for Deep Learning](http://www.deeplearningbook.org/contents/regularization.html), [Chapter 8. Optimization for Training DeepModels](http://www.deeplearningbook.org/contents/optimization.html), [Chapter 11. Practical Methodology](http://www.deeplearningbook.org/contents/guidelines.html)
 
 ### 2. Redes Neuronales Convolucionales (CNN)
 
-* Arquitecturas más conocidas: AlexNet, VGG, InceptionNet, ResNet, DenseNet
+* Introducción a Redes Convolucionales ([video](https://www.youtube.com/watch?v=vSHSmiKiiDw))
+* Arquitecturas más conocidas: AlexNet, VGG, InceptionNet, ResNet, DenseNet ([video1](https://www.youtube.com/watch?v=ju7nKaFaFvc))
 
 Readings: [Chapter 9. Convolutional Networks](http://www.deeplearningbook.org/contents/convnets.html), [Chapter 12. Applications](http://www.deeplearningbook.org/contents/applications.html)
 
