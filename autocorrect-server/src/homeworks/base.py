@@ -9,11 +9,15 @@ from src.messages import error, send_test
 
 
 class Homework(ABC):
-    _test_data = {}
-    _test_expected = {}
+    def __init__(self, test_filename, test_filepath='tests'):
+        self._test_data = {}
+        self._test_expected = {}
+        base = os.path.dirname(
+            os.path.dirname(
+                os.path.dirname(
+                    os.path.abspath(__file__))))
+        self.test_file = os.path.join(base, test_filepath, test_filename)
 
-    def __init__(self, test_filename, test_filepath='./tests'):
-        self.test_file = os.path.join(test_filepath, test_filename)
         self.load_tests()
 
     @abstractmethod
