@@ -118,6 +118,12 @@ class AutoCorrect:
             answer_dict: Dict[str, Any],
             required_number: int):
 
+        if len(tests) != len(answer_dict):
+            raise ValueError(
+                'There must be the same number of tests as answers')
+        if required_number > len(answer_dict):
+            raise ValueError('There cannot be more required tests than tests')
+
         current_correct = 0
         acc_results = {}
 
