@@ -23,7 +23,9 @@ class ImageCaptionDataset(Dataset):
     return anchor, pos_enc
 
 
-def train_for_classification(net, train_loader, test_loader, optimizer, criterion, epochs=1, reports_every=1, device='cuda'):
+def train_for_classification(net, train_loader, test_loader, optimizer, 
+                             criterion, lr_scheduler=None,
+                             epochs=1, reports_every=1, device='cuda'):
   net.to(device)
   total_train = len(train_loader.dataset)
   total_test = len(test_loader.dataset)
@@ -78,6 +80,7 @@ def train_for_classification(net, train_loader, test_loader, optimizer, criterio
 
       # report
       sys.stdout.write(f'\rEpoch:{e}({items}/{total_train}), ' 
+                       + (f'lr:{lr_scheduler.get_last_lr()[0]:02.7f}, ' if lr_scheduler is not None else '')
                        + f'Loss:{avg_loss:02.5f}, '
                        + f'Train Acc:{avg_acc:02.1f}%')
 
@@ -99,8 +102,10 @@ def train_for_classification(net, train_loader, test_loader, optimizer, criterio
     else:
       sys.stdout.write('\n')
 
-  return train_loss, (train_acc, test_acc)
+    if lr_scheduler is not None:
+      lr_scheduler.step()
 
+  return train_loss, (train_acc, test_acc)
   
 def l2norm(x):
   norm = np.linalg.norm(x, axis=1, keepdims=True)
@@ -118,7 +123,9 @@ def compute_ranks_x2y(x, y):
   return ranks
 
 
-def train_for_retrieval(img_net, text_net, train_loader, test_loader, optimizer, criterion, epochs=1, reports_every=1, device='cuda', norm=True):
+def train_for_retrieval(img_net, text_net, train_loader, test_loader, optimizer, 
+                        criterion, lr_scheduler=None, epochs=1, reports_every=1, 
+                        device='cuda', norm=True):
   img_net.to(device)
   text_net.to(device)
 
@@ -173,7 +180,8 @@ def train_for_retrieval(img_net, text_net, train_loader, test_loader, optimizer,
       avg_r10 = running_r10/(i+1)
 
       # report
-      sys.stdout.write(f'\rEpoch:{e}({items}/{total_train}), ' 
+      sys.stdout.write(f'\rEpoch:{e}({items}/{total_train}), '
+                       + (f'lr:{lr_scheduler.get_last_lr()[0]:02.7f}, ' if lr_scheduler is not None else '')
                        + f'Loss:{avg_loss:02.5f}, '
                        + f'Train MRR:{avg_meanrr:02.2f} '
                        + f'R@10:{avg_r10:02.2f}%')
@@ -213,5 +221,8 @@ def train_for_retrieval(img_net, text_net, train_loader, test_loader, optimizer,
                        + f'R@10:{avg_r10:02.2f}%.\n')
     else:
       sys.stdout.write('\n')
+
+    if lr_scheduler is not None:
+      lr_scheduler.step()
 
   return train_loss, (train_meanrr, test_meanrr), (train_r10, test_r10)
