@@ -48,8 +48,21 @@ def train_for_classification(net, train_loader, test_loader, optimizer, criterio
       # la loss, ejecutamos el backpropagation (.backward) 
       # y un paso del optimizador para modificar los parámetros
       optimizer.zero_grad()
-      Y_logits = net(X)['logits']
+
+      out_dict = net(X)
+      Y_logits = out_dict['logits']
       loss = criterion(Y_logits, Y)
+
+      # Si hay logits auxiliares considéralos en la loss promediando
+      # loss calculada para cada logit (incluyendo el anterior ya calculado)
+      if 'aux_logits' in out_dict:
+        aux_logits_list = out_dict['aux_logits']
+        N = len(aux_logits_list)
+        for aux_logits in aux_logits_list:
+          loss += criterion(aux_logits, Y)
+        loss /= (N + 1)
+
+      
       loss.backward()
       optimizer.step()
 
