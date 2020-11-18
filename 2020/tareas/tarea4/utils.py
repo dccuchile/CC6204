@@ -84,7 +84,7 @@ def train_for_classification(net, train_loader, test_loader, optimizer,
                        + f'Loss:{avg_loss:02.5f}, '
                        + f'Train Acc:{avg_acc:02.1f}%')
       
-    tiempo_epochs += time.clock() - inicio_epoch
+    tiempo_epochs += timer() - inicio_epoch
 
     if e % reports_every == 0:
       sys.stdout.write(', Validating...')
@@ -189,7 +189,7 @@ def train_for_retrieval(img_net, text_net, train_loader, test_loader, optimizer,
                        + f'Train MRR:{avg_meanrr:02.2f} '
                        + f'R@10:{avg_r10:02.2f}%')
       
-    tiempo_epochs += time.clock() - inicio_epoch
+    tiempo_epochs += timer() - inicio_epoch
 
     if e % reports_every == 0:
       sys.stdout.write(', Validating...')
