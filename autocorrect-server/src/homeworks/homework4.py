@@ -11,7 +11,7 @@ from src.messages import error, send_results
 class __homework4(Homework):
     def __init__(self):
         super().__init__(test_filename='hw4.json')
-        self.special_questions = ('1a', '1b')
+        self.question_time = ('1a', '1b')
 
     def convert_test(self):
         for question_id, tests in self._test_expected.items():
@@ -20,17 +20,23 @@ class __homework4(Homework):
                 self._test_expected[question_id][test_id]['value'] = np.array(
                     values['value'])
 
-    def _check(self, func, student, expected):
+    def _check(self, func, expected, student):
         try:
             status, result, comments = func(expected, student)
         except InvalidInput as e:
-            return error(message=e.msg, code='invalid_input')
+            return {
+                'status': 'error',
+                'response': error(message=e.msg, code='invalid_input')
+            }
 
         else:
-            return send_results(
-                status=status,
-                mask=result,
-                comments=comments)
+            return {
+                'status': status,
+                'response': send_results(
+                    status=status,
+                    mask=result,
+                    comments=comments)
+            }
 
     def check(self, question_number, data):
         try:
@@ -38,7 +44,7 @@ class __homework4(Homework):
             student_answer = self.extract_argument(data, 'student_answer')
 
             student_time = None
-            if question_number in self.special_questions:
+            if question_number in self.question_time:
                 student_time = self.extract_argument(data, 'time')
 
             expected = self.test_getter(
@@ -58,21 +64,20 @@ class __homework4(Homework):
                 numpy_isclose_func,
                 expected_value,
                 student_answer)
-            if res_val['status'] == 'error' or res_val['result_status'] == 0:
+            if res_val['status'] == 'error' or res_val['status'] == 0:
                 # if error or value is wrong, then return
-                return res_val
+                return res_val['response']
 
             # if one of the special questions
-            if question_number in self.special_questions:
+            if question_number in self.question_time:
                 # check time
                 res_time = self._check(
                     max_value_func,
                     expected_time,
                     student_time)
                 # if error or wrong time, then return
-                if res_time['status'] == 'error' or \
-                        res_time['result_status'] == 0:
-                    return res_time
+                if res_time['status'] == 'error' or res_time['status'] == 0:
+                    return res_time['response']
 
             # if everything is correct, return correct test
             return send_results(
