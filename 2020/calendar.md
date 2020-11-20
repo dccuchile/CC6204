@@ -38,36 +38,37 @@
 ### Semana 8
 
 * Cátedra: Algoritmos de Optimización, SGD con Momentum, RMSProp, Adam ([video](https://www.youtube.com/watch?v=FBsiDndtdVg))
-* Cátedra: Optimización II
+* Cátedra: Aclaración de dudas
 
 ### Semana 9
 
-* Cátedra: Intro a otras arquitecturas (Convolucionales)
-* Cátedra: Intro a otras arquitecturas (Recurrentes)
+* Cátedra: Introducción a Redes Convolucionales ([video](https://www.youtube.com/watch?v=vSHSmiKiiDw))
+* Cátedra: Pooling, AlexNet, VGG ([video](https://www.youtube.com/watch?v=ju7nKaFaFvc))
 
 ### Semana 10
 
-* Cátedra: Redes Conv (AlexNet, VGG)
-* Cátedra: Redes Conv (InceptionNet, ResNet, DenseNet)
+* Cátedra: Redes Conv (AlexNet, VGG) ([video](https://www.youtube.com/watch?v=ju7nKaFaFvc))
+
+* Cátedra: Redes Conv (InceptionNet, ResNet, DenseNet) ([video](https://www.youtube.com/watch?v=AxWG1aLWODE))
 
 ### Semana 11
 
+* Cátedra: Redes Conv (ResNet, DenseNet)
 * Cátedra: Redes Recurrentes (Bidirectional + Seq to Seq)
-* Cátedra: Redes Recurrentes (GRU, LSTM, Compuertas)
 
 ### Semana 12
 
+* Cátedra: Redes Recurrentes (GRU, LSTM, Compuertas)
 * Cátedra: Atención Neuronal
-* Cátedra: Transformers
 
 ### Semana 13
 
+* Cátedra: Transformers
 * Cátedra: Graph Neural Networks 
-* Cátedra: Generative Adversarial Networks
 
 ### Semana 14
 
-* Cátedra: Avanzado
+* Cátedra: Generative Adversarial Networks
 * Cátedra: Avanzado
 
 ### Semana 15

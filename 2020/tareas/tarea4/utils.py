@@ -23,7 +23,9 @@ class ImageCaptionDataset(Dataset):
     return anchor, pos_enc
 
 
-def train_for_classification(net, train_loader, test_loader, optimizer, criterion, epochs=1, reports_every=1, device='cuda'):
+def train_for_classification(net, train_loader, test_loader, optimizer, 
+                             criterion, lr_scheduler=None,
+                             epochs=1, reports_every=1, device='cuda'):
   net.to(device)
   total_train = len(train_loader.dataset)
   total_test = len(test_loader.dataset)
@@ -48,8 +50,21 @@ def train_for_classification(net, train_loader, test_loader, optimizer, criterio
       # la loss, ejecutamos el backpropagation (.backward) 
       # y un paso del optimizador para modificar los parámetros
       optimizer.zero_grad()
-      Y_logits = net(X)['logits']
+
+      out_dict = net(X)
+      Y_logits = out_dict['logits']
       loss = criterion(Y_logits, Y)
+
+      # Si hay logits auxiliares considéralos en la loss promediando
+      # loss calculada para cada logit (incluyendo el anterior ya calculado)
+      if 'aux_logits' in out_dict:
+        aux_logits_list = out_dict['aux_logits']
+        N = len(aux_logits_list)
+        for aux_logits in aux_logits_list:
+          loss += criterion(aux_logits, Y)
+        loss /= (N + 1)
+
+      
       loss.backward()
       optimizer.step()
 
@@ -65,8 +80,11 @@ def train_for_classification(net, train_loader, test_loader, optimizer, criterio
 
       # report
       sys.stdout.write(f'\rEpoch:{e}({items}/{total_train}), ' 
+                       + (f'lr:{lr_scheduler.get_last_lr()[0]:02.7f}, ' if lr_scheduler is not None else '')
                        + f'Loss:{avg_loss:02.5f}, '
                        + f'Train Acc:{avg_acc:02.1f}%')
+      
+    tiempo_epochs += timer() - inicio_epoch
 
     if e % reports_every == 0:
       sys.stdout.write(', Validating...')
@@ -82,12 +100,15 @@ def train_for_classification(net, train_loader, test_loader, optimizer, criterio
         running_acc += torch.sum(max_idx == Y).item()
         avg_acc = running_acc/total_test*100
       test_acc.append(avg_acc)
-      sys.stdout.write(f', Val Acc:{avg_acc:02.2f}%.\n')
+      sys.stdout.write(f', Val Acc:{avg_acc:02.2f}%, '
+                       + f'Avg-Time:{tiempo_epochs/e:.3f}s.\n')
     else:
       sys.stdout.write('\n')
 
-  return train_loss, (train_acc, test_acc)
+    if lr_scheduler is not None:
+      lr_scheduler.step()
 
+  return train_loss, (train_acc, test_acc)
   
 def l2norm(x):
   norm = np.linalg.norm(x, axis=1, keepdims=True)
@@ -105,7 +126,9 @@ def compute_ranks_x2y(x, y):
   return ranks
 
 
-def train_for_retrieval(img_net, text_net, train_loader, test_loader, optimizer, criterion, epochs=1, reports_every=1, device='cuda', norm=True):
+def train_for_retrieval(img_net, text_net, train_loader, test_loader, optimizer, 
+                        criterion, lr_scheduler=None, epochs=1, reports_every=1, 
+                        device='cuda', norm=True):
   img_net.to(device)
   text_net.to(device)
 
@@ -160,10 +183,13 @@ def train_for_retrieval(img_net, text_net, train_loader, test_loader, optimizer,
       avg_r10 = running_r10/(i+1)
 
       # report
-      sys.stdout.write(f'\rEpoch:{e}({items}/{total_train}), ' 
+      sys.stdout.write(f'\rEpoch:{e}({items}/{total_train}), '
+                       + (f'lr:{lr_scheduler.get_last_lr()[0]:02.7f}, ' if lr_scheduler is not None else '')
                        + f'Loss:{avg_loss:02.5f}, '
                        + f'Train MRR:{avg_meanrr:02.2f} '
                        + f'R@10:{avg_r10:02.2f}%')
+      
+    tiempo_epochs += timer() - inicio_epoch
 
     if e % reports_every == 0:
       sys.stdout.write(', Validating...')
@@ -197,8 +223,12 @@ def train_for_retrieval(img_net, text_net, train_loader, test_loader, optimizer,
       test_meanrr.append(avg_meanrr)
       test_r10.append(avg_r10)
       sys.stdout.write(f'MRR:{avg_meanrr:02.2f} '
-                       + f'R@10:{avg_r10:02.2f}%.\n')
+                       + f'R@10:{avg_r10:02.2f}% '
+                       + f'Avg-Time:{tiempo_epochs/e:.3f}s.\n')
     else:
       sys.stdout.write('\n')
+
+    if lr_scheduler is not None:
+      lr_scheduler.step()
 
   return train_loss, (train_meanrr, test_meanrr), (train_r10, test_r10)
