@@ -3,12 +3,14 @@ from flask import Flask, request
 from src.homeworks.homework1 import homework1
 from src.homeworks.homework2 import homework2
 from src.homeworks.homework3 import homework3
+from src.homeworks.homework4 import homework4
 from src.messages import error
 
 available_homeworks = {
     '1': homework1,
     '2': homework2,
     '3': homework3,
+    '4': homework4
 }
 
 
