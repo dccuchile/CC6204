@@ -83,6 +83,8 @@ def train_for_classification(net, train_loader, test_loader, optimizer,
                        + (f'lr:{lr_scheduler.get_last_lr()[0]:02.7f}, ' if lr_scheduler is not None else '')
                        + f'Loss:{avg_loss:02.5f}, '
                        + f'Train Acc:{avg_acc:02.1f}%')
+      
+    tiempo_epochs += timer() - inicio_epoch
 
     if e % reports_every == 0:
       sys.stdout.write(', Validating...')
@@ -98,7 +100,8 @@ def train_for_classification(net, train_loader, test_loader, optimizer,
         running_acc += torch.sum(max_idx == Y).item()
         avg_acc = running_acc/total_test*100
       test_acc.append(avg_acc)
-      sys.stdout.write(f', Val Acc:{avg_acc:02.2f}%.\n')
+      sys.stdout.write(f', Val Acc:{avg_acc:02.2f}%, '
+                       + f'Avg-Time:{tiempo_epochs/e:.3f}s.\n')
     else:
       sys.stdout.write('\n')
 
@@ -185,6 +188,8 @@ def train_for_retrieval(img_net, text_net, train_loader, test_loader, optimizer,
                        + f'Loss:{avg_loss:02.5f}, '
                        + f'Train MRR:{avg_meanrr:02.2f} '
                        + f'R@10:{avg_r10:02.2f}%')
+      
+    tiempo_epochs += timer() - inicio_epoch
 
     if e % reports_every == 0:
       sys.stdout.write(', Validating...')
@@ -218,7 +223,8 @@ def train_for_retrieval(img_net, text_net, train_loader, test_loader, optimizer,
       test_meanrr.append(avg_meanrr)
       test_r10.append(avg_r10)
       sys.stdout.write(f'MRR:{avg_meanrr:02.2f} '
-                       + f'R@10:{avg_r10:02.2f}%.\n')
+                       + f'R@10:{avg_r10:02.2f}% '
+                       + f'Avg-Time:{tiempo_epochs/e:.3f}s.\n')
     else:
       sys.stdout.write('\n')
 
