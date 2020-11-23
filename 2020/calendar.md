@@ -43,32 +43,31 @@
 ### Semana 9
 
 * Cátedra: Introducción a Redes Convolucionales ([video](https://www.youtube.com/watch?v=vSHSmiKiiDw))
-* Cátedra: Pooling, AlexNet, VGG ([video](https://www.youtube.com/watch?v=ju7nKaFaFvc))
+* Cátedra: Redes Convolucionales: Pooling, AlexNet, VGG ([video](https://www.youtube.com/watch?v=ju7nKaFaFvc))
 
 ### Semana 10
 
-* Cátedra: Redes Conv (AlexNet, VGG) ([video](https://www.youtube.com/watch?v=ju7nKaFaFvc))
-
-* Cátedra: Redes Conv (InceptionNet, ResNet, DenseNet) ([video](https://www.youtube.com/watch?v=AxWG1aLWODE))
+* Cátedra: Redes Convolucionales: InceptionNet (GoogleNet) ([video](https://www.youtube.com/watch?v=AxWG1aLWODE))
+* Cátedra: Redes Convolucionales: ResNet, DenseNet ([video](https://www.youtube.com/watch?v=C7S7wBsg2KE))
 
 ### Semana 11
 
-* Cátedra: Redes Conv (ResNet, DenseNet)
 * Cátedra: Redes Recurrentes (Bidirectional + Seq to Seq)
+* Cátedra: Redes Recurrentes (GRU, LSTM, Compuertas)
 
 ### Semana 12
 
-* Cátedra: Redes Recurrentes (GRU, LSTM, Compuertas)
 * Cátedra: Atención Neuronal
+* Cátedra: Transformers
 
 ### Semana 13
 
-* Cátedra: Transformers
 * Cátedra: Graph Neural Networks 
+* Cátedra: Generative Adversarial Networks
 
 ### Semana 14
 
-* Cátedra: Generative Adversarial Networks
+* Cátedra: Avanzado
 * Cátedra: Avanzado
 
 ### Semana 15

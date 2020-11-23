@@ -47,7 +47,7 @@ Readings: [Chapter 7. Regularization for Deep Learning](http://www.deeplearningb
 ### 2. Redes Neuronales Convolucionales (CNN)
 
 * Introducción a Redes Convolucionales ([video](https://www.youtube.com/watch?v=vSHSmiKiiDw))
-* Arquitecturas más conocidas: AlexNet, VGG, GoogLeNet, ResNet, DenseNet ([video1](https://www.youtube.com/watch?v=ju7nKaFaFvc), [video2](https://www.youtube.com/watch?v=AxWG1aLWODE))
+* Arquitecturas más conocidas: AlexNet, VGG, GoogLeNet, ResNet, DenseNet ([video1](https://www.youtube.com/watch?v=ju7nKaFaFvc), [video2](https://www.youtube.com/watch?v=AxWG1aLWODE)), [video3](https://www.youtube.com/watch?v=C7S7wBsg2KE)
 
 Readings: [Chapter 9. Convolutional Networks](http://www.deeplearningbook.org/contents/convnets.html), [Chapter 12. Applications](http://www.deeplearningbook.org/contents/applications.html)
 
