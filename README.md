@@ -47,17 +47,14 @@ Readings: [Chapter 7. Regularization for Deep Learning](http://www.deeplearningb
 ### 2. Redes Neuronales Convolucionales (CNN)
 
 * Introducción a Redes Convolucionales ([video](https://www.youtube.com/watch?v=vSHSmiKiiDw))
-* Arquitecturas más conocidas: AlexNet, VGG, GoogLeNet, ResNet, DenseNet ([video1](https://www.youtube.com/watch?v=ju7nKaFaFvc), [video2](https://www.youtube.com/watch?v=AxWG1aLWODE)), [video3](https://www.youtube.com/watch?v=C7S7wBsg2KE)
+* Arquitecturas más conocidas: AlexNet, VGG, GoogLeNet, ResNet, DenseNet ([video1](https://www.youtube.com/watch?v=ju7nKaFaFvc), [video2](https://www.youtube.com/watch?v=AxWG1aLWODE), [video3](https://www.youtube.com/watch?v=C7S7wBsg2KE))
 
 Readings: [Chapter 9. Convolutional Networks](http://www.deeplearningbook.org/contents/convnets.html), [Chapter 12. Applications](http://www.deeplearningbook.org/contents/applications.html)
 
 ### 3. Redes Neuronales Recurrentes (RNN)
 
-* Backpropagation en el tiempo 
-* Redes recurrentes bidireccionales
-* Dependencias temporales a largo plazo
-* Modelos con memoria externa explícita
-* Arquitecturas más conocidas: GRU, LSTM
+* Introducción a Redes Recurrentes ([video](https://www.youtube.com/watch?v=yHzflmQ9EoY))
+* Arquitecturas más conocidas: GRU, LSTM ([video](https://www.youtube.com/watch?v=Bcy_no-u_BM))
 
 Readings: [Chapter 10. Sequence Modeling: Recurrentand Recursive Nets](http://www.deeplearningbook.org/contents/rnn.html), [Chapter 12. Applications](http://www.deeplearningbook.org/contents/applications.html)
 
@@ -74,6 +71,8 @@ Readings: [Chapter 10. Sequence Modeling: Recurrentand Recursive Nets](http://ww
 Readings: [Chapter 14. Autoencoders](http://www.deeplearningbook.org/contents/autoencoders.html), [Chapter 20. Deep Generative Models](http://www.deeplearningbook.org/contents/generative_models.html)
 
 ## Libros
+No hay ningún libro de texto obligatorio para el curso. Algunas conferencias incluirán lecturas sugeridas de "Deep Learning" de Ian Goodfellow, Yoshua Bengio, and Aaron Courville; sin embargo, no es necesario comprar una copia, ya que está disponible de forma [gratuita en línea](http://www.deeplearningbook.org/).
+
 1. [Deep Learning](http://www.deeplearningbook.org/) by Ian Goodfellow, Yoshua Bengio, and Aaron Courville (bibliografía fundamental del curso)
 2. [Dive into Deep Learning](https://d2l.ai/) by Aston Zhang, Zachary C. Lipton, Mu Li, and Alexander J. Smola
 3. [Deep Learning for Vision Systems](https://livebook.manning.com/book/grokking-deep-learning-for-computer-vision/deep-learning-for-vision-systems/7) by Mohamed Elgendy

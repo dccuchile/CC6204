@@ -52,8 +52,8 @@
 
 ### Semana 11
 
-* Cátedra: Redes Recurrentes (Bidirectional + Seq to Seq)
-* Cátedra: Redes Recurrentes (GRU, LSTM, Compuertas)
+* Cátedra: Introducción a Redes Recurrentes ([video](https://www.youtube.com/watch?v=yHzflmQ9EoY))
+* Cátedra: Arquitecturas de Redes Recurrentes (GRU, LSTM, Compuertas) ([video](https://www.youtube.com/watch?v=Bcy_no-u_BM))
 
 ### Semana 12
 
