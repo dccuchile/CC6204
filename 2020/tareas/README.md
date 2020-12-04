@@ -20,4 +20,4 @@ Las preguntas de la tarea tienen instrucciones incluidas. Léanlas con cuidadosa
 (próximamente)
 
 ## Tarea 6:
-(Dadas las dificultade, este año hemos decidido hacer solo cinco tareas)
+(Dadas las dificultades, este año hemos decidido hacer solo cinco tareas)

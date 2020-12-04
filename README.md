@@ -9,6 +9,7 @@ Curso introductorio (en español) al área de aprendizaje basado en redes neuron
 ### Primavera 2020
 * [Calendario del curso](2020/calendar.md)
 * [YouTube playlist](https://www.youtube.com/playlist?list=PLBjZ-ginWc1e0_Dp4heHglsjJmacV_F20)
+* [Tareas](2020/tareas/README.md)
 
 ## Requerimientos
 - Una cuenta de Google para usar [Google Collaboratory](https://colab.research.google.com/), o
