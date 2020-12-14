@@ -1,5 +1,6 @@
 from tqdm import tqdm
 import matplotlib.pyplot as plt
+import numpy as np
 
 import torch
 from torchvision import transforms
@@ -95,7 +96,7 @@ def eval_one_epoch(model, dataloader, loss_fun, device):
 
 def plot_loss(loss):
     plt.figure()
-    fig = plt.plot(losses)
+    fig = plt.plot(loss)
     plt.legend(fig, ["train", "val"])
     plt.xlabel("epoch")
     plt.ylabel("cross entropy")
@@ -107,13 +108,13 @@ def generate_sentence(model, init_word, stop_word, encoder, vocab):
     model.to("cpu")
     model.eval()
     state = torch.zeros(model.nlayers, 1, model.nh)
-    next_word = word2idx[init_word]
+    next_word = encoder[init_word]
     x = torch.tensor([next_word], dtype=torch.long).view(1, 1)
     if not model.emb_flag:
         x = torch.nn.functional.one_hot(x, model.nout).float()        
     sentence.append(next_word)
     with torch.no_grad():
-        while next_word != word2idx[stop_word]:
+        while next_word != encoder[stop_word]:
             logits, state = model.evaluate(x, state)
             next_word = Categorical(logits=logits).sample().item()
             sentence.append(next_word)
@@ -218,13 +219,13 @@ def generate_caption(model, image, stop_word, encoder, vocab):
     model.to("cpu")
     model.eval()
     state = model.cnn_model(image.unsqueeze(0)).repeat(model.rnn_model.nlayers, 1, 1)
-    next_word = word2idx["<sos>"]
+    next_word = encoder["<sos>"]
     x = torch.tensor([next_word], dtype=torch.long).view(1, 1)
     if not model.emb_flag:
         x = torch.nn.functional.one_hot(x, model.nout).float()        
     sentence.append(next_word)
     with torch.no_grad():
-        while next_word != word2idx[stop_word]:
+        while next_word != encoder[stop_word]:
             logits, state = model.evaluate(x, state)
             next_word = Categorical(logits=logits).sample().item()
             sentence.append(next_word)
