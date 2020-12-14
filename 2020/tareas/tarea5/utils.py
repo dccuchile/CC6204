@@ -1,8 +1,7 @@
 def extract_text_from_set(data):
     sentences = []
     for element in tqdm(data):
-        for sentence in element[1]:
-            sentences.append(sentence)
+        sentences.append([sentence for sentence in element[1]])            
     return sentences
 
 
@@ -15,3 +14,10 @@ def tokenize_text(texts, tokenizer, counter):
             tokenized_text.append(".")
         tokenized_texts.append(tokenized_text)
     return tokenized_texts, counter
+
+
+def encode_sentences(text_tokens, vocab, encoder):
+    encoded_tokens = []
+    for sentence in tqdm(text_tokens):
+        encoded_tokens.append([encoder[word] for word in sentence])
+    return encoded_tokens
