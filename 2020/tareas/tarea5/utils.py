@@ -104,7 +104,11 @@ def plot_loss(loss):
 
 
 def generate_sentence(model, init_sentence, encoder, vocab):
-    encoded_init_sentence = [encoder[word] for word in init_sentence.split(" ")]
+    if init_sentence == " ":
+        encoded_init_sentence = [encoder["<sos>"]]
+    else:
+        encoded_init_sentence = [encoder[word] for word in init_sentence.split(" ")]
+        encoded_init_sentence.insert(0, encoder["<sos>"])
     init_sentence_length = len(encoded_init_sentence)
     sentence = []
     counter = 0
