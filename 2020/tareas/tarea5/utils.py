@@ -209,3 +209,27 @@ def show_image(image):
     plt.figure()
     plt.imshow(numpy_image.astype(np.uint8))
     return
+
+
+def generate_caption(model, image, stop_word, encoder, vocab):
+    sentence = []
+    model.to("cpu")
+    model.eval()
+    state = model.cnn_model(image.unsqueeze(0)).repeat(model.rnn_model.nlayers, 1, 1)
+    next_word = word2idx["<sos>"]
+    x = torch.tensor([next_word], dtype=torch.long).view(1, 1)
+    if not model.emb_flag:
+        x = torch.nn.functional.one_hot(x, model.nout).float()        
+    sentence.append(next_word)
+    with torch.no_grad():
+        while next_word != word2idx[stop_word]:
+            logits, state = model.evaluate(x, state)
+            next_word = Categorical(logits=logits).sample().item()
+            sentence.append(next_word)
+            x = torch.tensor([next_word], dtype=torch.long).view(1, 1)
+            if not model.emb_flag:
+                x = torch.nn.functional.one_hot(x, model.nout).float() 
+    sentence = [vocab[idx] for idx in sentence]
+    sentence = sentence[1:]
+    sentence = " ".join(sentence)
+    return sentence
