@@ -1,6 +1,8 @@
 from tqdm import tqdm
 import matplotlib.pyplot as plt
 
+import torch
+from torchvision import transforms
 from torch.utils.data import Dataset
 from torch.distributions.categorical import Categorical
 
