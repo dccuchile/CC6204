@@ -103,25 +103,30 @@ def plot_loss(loss):
     return
 
 
-def generate_sentence(model, init_word, stop_word, encoder, vocab):
+def generate_sentence(model, init_sentence, encoder, vocab):
+    encoded_init_sentence = [encoder[word] for word in init_sentence.split(" ")]
+    init_sentence_length = len(encoded_init_sentence)
     sentence = []
+    counter = 0
     model.to("cpu")
     model.eval()
     state = torch.zeros(model.nlayers, 1, model.nh)
-    next_word = encoder[init_word]
+    next_word = encoded_init_sentence[0]
     x = torch.tensor([next_word], dtype=torch.long).view(1, 1)
     if not model.emb_flag:
         x = torch.nn.functional.one_hot(x, model.nout).float()        
     sentence.append(next_word)
     with torch.no_grad():
-        while next_word != encoder[stop_word]:
+        while next_word != encoder["."]:
             logits, state = model.evaluate(x, state)
-            next_word = Categorical(logits=logits).sample().item()
+            next_word = encoded_init_sentence[counter + 1] if counter < init_sentence_length - 1 else Categorical(logits=logits).sample().item()
             sentence.append(next_word)
             x = torch.tensor([next_word], dtype=torch.long).view(1, 1)
             if not model.emb_flag:
-                x = torch.nn.functional.one_hot(x, model.nout).float() 
+                x = torch.nn.functional.one_hot(x, model.nout).float()
+            counter += 1
     sentence = [vocab[idx] for idx in sentence]
+    sentence = sentence[1:]
     sentence = " ".join(sentence)
     return sentence
 
