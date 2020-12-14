@@ -8,7 +8,8 @@ from torch.distributions.categorical import Categorical
 def extract_text_from_set(data):
     sentences = []
     for element in tqdm(data):
-        sentences.append([sentence for sentence in element[1]])            
+        for captions in element[1]:
+            sentences.append(captions)            
     return sentences
 
 
@@ -19,6 +20,7 @@ def tokenize_text(texts, tokenizer, counter):
         counter.update(tokenized_text)
         if tokenized_text[-1] != ".":
             tokenized_text.append(".")
+        tokenized_text.insert(0, "<sos>")
         tokenized_texts.append(tokenized_text)
     return tokenized_texts, counter
 
@@ -33,13 +35,20 @@ def encode_sentences(text_tokens, vocab, encoder):
 class TextDataset(Dataset):
     def __init__(self, texts):
         self.texts = [torch.tensor(text, dtype=torch.long) for text in texts]
+        self.seq_len = [len(text) for text in texts]
         self.n = len(self.texts)
 
     def __getitem__(self, index):
-        return self.texts[index]
+        return self.texts[index], self.seq_len[index]
 
     def __len__(self):
         return self.n
+
+
+def pad_sequence(x, pad_idx):
+    sequences = torch.nn.utils.rnn.pad_sequence([xi[0] for xi in x], batch_first=True, padding_value=pad_idx)
+    seq_len = torch.tensor([xi[1] for xi in x], dtype=torch.long)
+    return sequences, seq_len
 
 
 def train_one_epoch(model, dataloader, optimizer, loss_fun, clip_value, device):
@@ -112,3 +121,33 @@ def generate_sentence(model, init_word, stop_word, encoder, vocab):
     sentence = [vocab[idx] for idx in sentence]
     sentence = " ".join(sentence)
     return sentence
+
+
+def encode_captions(sentences, tokenizer, encoder, init_word, stop_word):
+    encoded_sentences = []
+    for sentence in sentences:
+        encoded_sentence = [encoder[word] for word in tokenizer(sentence.lower())]
+        if encoded_sentence[-1] != encoder[stop_word]:
+            encoded_sentence.append(encoder[stop_word])
+        encoded_sentence.insert(0, encoder[init_word])
+        encoded_sentences.append(encoded_sentence)
+    return encoded_sentences
+
+
+class CaptioningDataset(Dataset):
+    def __init__(self, data, transform, tokenizer, encoder, init_word, stop_word):
+        captions = [encode_captions(xi[1], tokenizer, encoder, init_word, stop_word) for xi in data]
+        self.sequences = []
+        for caption in captions:
+            self.sequences.append([torch.tensor(sentence, dtype=torch.long) for sentence in caption])
+        self.original_image = [xi[0] for xi in data]
+        self.images = [transform(image) for image in self.original_image]
+        self.n = len(self.sequences)
+
+    def __len__(self):
+        return self.n
+
+    def __getitem__(self, idx):
+        sequence = self.sequences[idx][0]
+        seq_len = len(sequence)
+        return sequence, seq_len, self.images[idx]
