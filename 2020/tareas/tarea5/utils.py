@@ -151,3 +151,61 @@ class CaptioningDataset(Dataset):
         sequence = self.sequences[idx][0]
         seq_len = len(sequence)
         return sequence, seq_len, self.images[idx]
+
+
+def pad_sequence_with_images(x, pad_idx):
+    sequences = torch.nn.utils.rnn.pad_sequence([xi[0] for xi in x], batch_first=True, padding_value=pad_idx)
+    seq_len = torch.tensor([xi[1] for xi in x], dtype=torch.long)
+    images = torch.stack([xi[2] for xi in x])
+    return sequences, seq_len, images
+
+
+def train_one_epoch_captioning(model, dataloader, optimizer, loss_fun, clip_value, device):
+    running_loss = 0
+    model.train()
+    for idx, batch in enumerate(dataloader):
+        x, sl, img = batch
+        x, sl, img = x.to(device), sl.to(device), img.to(device)
+        if model.emb_flag:
+            logits = model(x[:, :-1], img)
+        else:            
+            one_hot = torch.nn.functional.one_hot(x, model.nout).float()
+            logits = model(one_hot[:, :-1], img)
+        loss = loss_fun(logits.transpose(1, 2), x[:, 1:])
+        optimizer.zero_grad()
+        loss.backward()
+        if clip_value is not None:
+            torch.nn.utils.clip_grad_norm_(model.parameters(), clip_value)
+        optimizer.step()
+        running_loss += loss.item()
+    running_loss /= (idx + 1)
+    return running_loss
+
+
+def eval_one_epoch_captioning(model, dataloader, loss_fun, device):
+    running_loss = 0
+    model.eval()
+    with torch.no_grad():
+        for idx, batch in enumerate(dataloader):
+            x, sl, img = batch
+            x, sl, img = x.to(device), sl.to(device), img.to(device)
+            if model.emb_flag:
+                logits = model(x[:, :-1], img)
+            else:            
+                one_hot = torch.nn.functional.one_hot(x, model.nout).float()
+                logits = model(one_hot[:, :-1], img)
+            loss = loss_fun(logits.transpose(1, 2), x[:, 1:])
+            running_loss += loss.item()
+    running_loss /= (idx + 1)
+    return running_loss
+
+
+def show_image(image):
+    mu = np.array([0.485, 0.456, 0.406])
+    std = np.array([0.229, 0.224, 0.225])
+    inverse_trans = transforms.Normalize(mean=- mu / std, std=1 / std)
+    numpy_image = inverse_trans(image).permute(1, 2, 0).cpu().numpy()
+    numpy_image *= 255
+    plt.figure()
+    plt.imshow(numpy_image.astype(np.uint8))
+    return
