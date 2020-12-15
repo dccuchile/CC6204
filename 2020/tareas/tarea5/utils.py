@@ -91,10 +91,10 @@ def eval_one_epoch(model, dataloader, loss_fun, device):
             else:            
                 one_hot = torch.nn.functional.one_hot(x, model.nout).float()
                 logits = model(one_hot[:, :-1])
-        pdb.set_trace()
-        loss = loss_fun(logits.transpose(1, 2), x[:, 1:])
-        running_loss += loss.item()
-        running_loss /= (idx + 1)
+            pdb.set_trace()
+            loss = loss_fun(logits.transpose(1, 2), x[:, 1:])
+            running_loss += loss.item()
+    running_loss /= (idx + 1)
     return running_loss
 
 
