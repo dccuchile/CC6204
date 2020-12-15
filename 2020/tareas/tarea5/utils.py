@@ -178,13 +178,12 @@ def train_one_epoch_captioning(model, dataloader, optimizer, loss_fun, clip_valu
     for idx, batch in enumerate(dataloader):
         x, _, img = batch
         x, img = x.to(device), img.to(device)
-        x = x.permute(1, 0, 2)
         if model.emb_flag:
-            logits = model(x[:, :-1], img)
+            logits = model(x.transpose(0, 1)[:-1], img)
         else:            
             one_hot = torch.nn.functional.one_hot(x, model.nout).float()
-            logits = model(one_hot[:, :-1], img)
-        loss = loss_fun(logits.transpose(1, 2), x[:, 1:])
+            logits = model(one_hot.transpose(0, 1)[:-1], img)
+        loss = loss_fun(logits.permute(1, 2, 0), x[:, 1:], img)
         optimizer.zero_grad()
         loss.backward()
         if clip_value is not None:
@@ -202,13 +201,12 @@ def eval_one_epoch_captioning(model, dataloader, loss_fun, device):
         for idx, batch in enumerate(dataloader):
             x, _, img = batch
             x, img = x.to(device), img.to(device)
-            x = x.permute(1, 0, 2)
             if model.emb_flag:
-                logits = model(x[:, :-1], img)
+                logits = model(x.transpose(0, 1)[:-1], img)
             else:            
                 one_hot = torch.nn.functional.one_hot(x, model.nout).float()
-                logits = model(one_hot[:, :-1], img)
-            loss = loss_fun(logits.transpose(1, 2), x[:, 1:])
+                logits = model(one_hot.transpose(0, 1)[:-1], img)
+            loss = loss_fun(logits.permute(1, 2, 0), x[:, 1:], img)
             running_loss += loss.item()
     running_loss /= (idx + 1)
     return running_loss
