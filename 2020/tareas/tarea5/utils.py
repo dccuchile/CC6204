@@ -83,14 +83,14 @@ def eval_one_epoch(model, dataloader, loss_fun, device):
     model.eval()
     with torch.no_grad():
         for idx, batch in enumerate(dataloader):
-        x, _ = batch
-        x = x.to(device)
-        x = x.permute(1, 0, 2)
-        if model.emb_flag:
-            logits = model(x[:, :-1])
-        else:            
-            one_hot = torch.nn.functional.one_hot(x, model.nout).float()
-            logits = model(one_hot[:, :-1])
+            x, _ = batch
+            x = x.to(device)
+            x = x.permute(1, 0, 2)
+            if model.emb_flag:
+                logits = model(x[:, :-1])
+            else:            
+                one_hot = torch.nn.functional.one_hot(x, model.nout).float()
+                logits = model(one_hot[:, :-1])
         pdb.set_trace()
         loss = loss_fun(logits.transpose(1, 2), x[:, 1:])
         running_loss += loss.item()
