@@ -54,17 +54,17 @@ def pad_sequence(x, pad_idx):
     return sequences, seq_len
 
 
-def train_one_epoch_captioning(model, dataloader, optimizer, loss_fun, clip_value, device):
+def train_one_epoch(model, dataloader, optimizer, loss_fun, clip_value, device):
     running_loss = 0
     model.train()
     for idx, batch in enumerate(dataloader):
-        x, _, img = batch
-        x, img = x.to(device), img.to(device)
+        x, _ = batch
+        x = x.to(device)
         if model.emb_flag:
-            logits = model(x.transpose(0, 1)[:-1], img)
+            logits = model(x.transpose(0, 1)[:-1])
         else:            
             one_hot = torch.nn.functional.one_hot(x, model.nout).float()
-            logits = model(one_hot.transpose(0, 1)[:-1], img)
+            logits = model(one_hot.transpose(0, 1)[:-1])
         loss = loss_fun(logits.permute(1, 2, 0), x[:, 1:])
         optimizer.zero_grad()
         loss.backward()
@@ -76,18 +76,18 @@ def train_one_epoch_captioning(model, dataloader, optimizer, loss_fun, clip_valu
     return running_loss
 
 
-def eval_one_epoch_captioning(model, dataloader, loss_fun, device):
+def eval_one_epoch(model, dataloader, loss_fun, device):
     running_loss = 0
     model.eval()
     with torch.no_grad():
         for idx, batch in enumerate(dataloader):
-            x, _, img = batch
-            x, img = x.to(device), img.to(device)
+            x, _ = batch
+            x = x.to(device)
             if model.emb_flag:
-                logits = model(x.transpose(0, 1)[:-1], img)
+                logits = model(x.transpose(0, 1)[:-1])
             else:            
                 one_hot = torch.nn.functional.one_hot(x, model.nout).float()
-                logits = model(one_hot.transpose(0, 1)[:-1], img)
+                logits = model(one_hot.transpose(0, 1)[:-1])
             loss = loss_fun(logits.permute(1, 2, 0), x[:, 1:])
             running_loss += loss.item()
     running_loss /= (idx + 1)
