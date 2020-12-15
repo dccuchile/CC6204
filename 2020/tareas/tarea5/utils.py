@@ -183,7 +183,7 @@ def train_one_epoch_captioning(model, dataloader, optimizer, loss_fun, clip_valu
         else:            
             one_hot = torch.nn.functional.one_hot(x, model.nout).float()
             logits = model(one_hot.transpose(0, 1)[:-1], img)
-        loss = loss_fun(logits.permute(1, 2, 0), x[:, 1:], img)
+        loss = loss_fun(logits.permute(1, 2, 0), x[:, 1:])
         optimizer.zero_grad()
         loss.backward()
         if clip_value is not None:
@@ -206,7 +206,7 @@ def eval_one_epoch_captioning(model, dataloader, loss_fun, device):
             else:            
                 one_hot = torch.nn.functional.one_hot(x, model.nout).float()
                 logits = model(one_hot.transpose(0, 1)[:-1], img)
-            loss = loss_fun(logits.permute(1, 2, 0), x[:, 1:], img)
+            loss = loss_fun(logits.permute(1, 2, 0), x[:, 1:])
             running_loss += loss.item()
     running_loss /= (idx + 1)
     return running_loss
