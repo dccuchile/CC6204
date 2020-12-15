@@ -54,48 +54,44 @@ def pad_sequence(x, pad_idx):
     return sequences, seq_len
 
 
-# def train_one_epoch(model, dataloader, optimizer, loss_fun, clip_value, device):
-#     running_loss = 0
-#     model.train()
-#     for idx, batch in enumerate(dataloader):
-#         x, _ = batch
-#         x = x.to(device)
-#         x = x.permute(1, 0, 2)
-#         if model.emb_flag:
-#             logits = model(x[:, :-1])
-#         else:            
-#             one_hot = torch.nn.functional.one_hot(x, model.nout).float()
-#             logits = model(one_hot[:, :-1])
-#         pdb.set_trace()
-#         loss = loss_fun(logits.transpose(1, 2), x[:, 1:])
-#         optimizer.zero_grad()
-#         loss.backward()
-#         if clip_value is not None:
-#             torch.nn.utils.clip_grad_norm_(model.parameters(), clip_value)
-#         optimizer.step()
-#         running_loss += loss.item()
-#     running_loss /= (idx + 1)
-#     return running_loss
+def train_one_epoch_captioning(model, dataloader, optimizer, loss_fun, clip_value, device):
+    running_loss = 0
+    model.train()
+    for idx, batch in enumerate(dataloader):
+        x, _, img = batch
+        x, img = x.to(device), img.to(device)
+        if model.emb_flag:
+            logits = model(x.transpose(0, 1)[:-1], img)
+        else:            
+            one_hot = torch.nn.functional.one_hot(x, model.nout).float()
+            logits = model(one_hot.transpose(0, 1)[:-1], img)
+        loss = loss_fun(logits.permute(1, 2, 0), x[:, 1:])
+        optimizer.zero_grad()
+        loss.backward()
+        if clip_value is not None:
+            torch.nn.utils.clip_grad_norm_(model.parameters(), clip_value)
+        optimizer.step()
+        running_loss += loss.item()
+    running_loss /= (idx + 1)
+    return running_loss
 
 
-# def eval_one_epoch(model, dataloader, loss_fun, device):
-#     running_loss = 0
-#     model.eval()
-#     with torch.no_grad():
-#         for idx, batch in enumerate(dataloader):
-#             x, _ = batch
-#             x = x.to(device)
-#             x = x.permute(1, 0, 2)
-#             if model.emb_flag:
-#                 logits = model(x[:, :-1])
-#             else:            
-#                 one_hot = torch.nn.functional.one_hot(x, model.nout).float()
-#                 logits = model(one_hot[:, :-1])
-#             pdb.set_trace()
-#             loss = loss_fun(logits.transpose(1, 2), x[:, 1:])
-#             running_loss += loss.item()
-#     running_loss /= (idx + 1)
-#     return running_loss
+def eval_one_epoch_captioning(model, dataloader, loss_fun, device):
+    running_loss = 0
+    model.eval()
+    with torch.no_grad():
+        for idx, batch in enumerate(dataloader):
+            x, _, img = batch
+            x, img = x.to(device), img.to(device)
+            if model.emb_flag:
+                logits = model(x.transpose(0, 1)[:-1], img)
+            else:            
+                one_hot = torch.nn.functional.one_hot(x, model.nout).float()
+                logits = model(one_hot.transpose(0, 1)[:-1], img)
+            loss = loss_fun(logits.permute(1, 2, 0), x[:, 1:])
+            running_loss += loss.item()
+    running_loss /= (idx + 1)
+    return running_loss
 
 
 def plot_loss(loss):
