@@ -16,21 +16,22 @@ def extract_text_from_set(data):
     return sentences
 
 
-def tokenize_text(texts, tokenizer, counter):
+def tokenize_text(texts, tokenizer, counter=None, sos_token='<sos>', end_token='.'):
     tokenized_texts = []
-    for text in tqdm(texts):
+    for text in texts:
         tokenized_text = tokenizer(text.lower())
-        counter.update(tokenized_text)
-        if tokenized_text[-1] != ".":
-            tokenized_text.append(".")
-        tokenized_text.insert(0, "<sos>")
+        if counter != None:
+            counter.update(tokenized_text)
+        if tokenized_text[-1] != end_token:
+            tokenized_text.append(end_token)
+        tokenized_text.insert(0, sos_token)
         tokenized_texts.append(tokenized_text)
     return tokenized_texts, counter
 
 
 def encode_sentences(text_tokens, vocab, encoder):
     encoded_tokens = []
-    for sentence in tqdm(text_tokens):
+    for sentence in text_tokens:
         encoded_tokens.append([encoder[word] for word in sentence])
     return encoded_tokens
 
@@ -47,11 +48,15 @@ class TextDataset(Dataset):
     def __len__(self):
         return self.n
 
+def pad_sequence_with_lengths(data, pad_idx):
+    sequences = torch.nn.utils.rnn.pad_sequence([d[0] for d in data], padding_value=pad_idx)
+    seq_lens = torch.tensor([d[1] for d in data], dtype=torch.long)
+    return sequences, seq_lens
 
-def pad_sequence(x, pad_idx):
-    sequences = torch.nn.utils.rnn.pad_sequence([xi[0] for xi in x], batch_first=True, padding_value=pad_idx)
-    seq_len = torch.tensor([xi[1] for xi in x], dtype=torch.long)
-    return sequences, seq_len
+#def pad_sequence(x, pad_idx):
+#    sequences = torch.nn.utils.rnn.pad_sequence([xi[0] for xi in x], batch_first=True, padding_value=pad_idx)
+#    seq_len = torch.tensor([xi[1] for xi in x], dtype=torch.long)
+#    return sequences, seq_len
 
 
 def train_one_epoch(model, dataloader, optimizer, loss_fun, clip_value, device):
@@ -60,12 +65,12 @@ def train_one_epoch(model, dataloader, optimizer, loss_fun, clip_value, device):
     for idx, batch in enumerate(dataloader):
         x, _ = batch
         x = x.to(device)
-        if model.emb_flag:
-            logits = model(x.transpose(0, 1)[:-1])
-        else:            
-            one_hot = torch.nn.functional.one_hot(x, model.nout).float()
-            logits = model(one_hot.transpose(0, 1)[:-1])
+
+        ###
+        logits = model(x.transpose(0, 1)[:-1])
+        ###
         loss = loss_fun(logits.permute(1, 2, 0), x[:, 1:])
+        
         optimizer.zero_grad()
         loss.backward()
         if clip_value is not None:
