@@ -58,8 +58,9 @@ def train_one_epoch(model, dataloader, optimizer, loss_fun, clip_value, device):
     running_loss = 0
     model.train()
     for idx, batch in enumerate(dataloader):
-        x, sl = batch
-        x, sl = x.to(device), sl.to(device)
+        x, _ = batch
+        x = x.to(device)
+        x = x.permute(1, 0, 2)
         if model.emb_flag:
             logits = model(x[:, :-1])
         else:            
@@ -81,8 +82,9 @@ def eval_one_epoch(model, dataloader, loss_fun, device):
     model.eval()
     with torch.no_grad():
         for idx, batch in enumerate(dataloader):
-            x, sl = batch
-            x, sl = x.to(device), sl.to(device)
+            x, _ = batch
+        	x = x.to(device)
+        	x = x.permute(1, 0, 2)
             if model.emb_flag:
                 logits = model(x[:, :-1])
             else:            
@@ -176,8 +178,9 @@ def train_one_epoch_captioning(model, dataloader, optimizer, loss_fun, clip_valu
     running_loss = 0
     model.train()
     for idx, batch in enumerate(dataloader):
-        x, sl, img = batch
-        x, sl, img = x.to(device), sl.to(device), img.to(device)
+        x, _, img = batch
+        x, img = x.to(device), img.to(device)
+        x = x.permute(1, 0, 2)
         if model.emb_flag:
             logits = model(x[:, :-1], img)
         else:            
@@ -199,8 +202,9 @@ def eval_one_epoch_captioning(model, dataloader, loss_fun, device):
     model.eval()
     with torch.no_grad():
         for idx, batch in enumerate(dataloader):
-            x, sl, img = batch
-            x, sl, img = x.to(device), sl.to(device), img.to(device)
+            x, _, img = batch
+        	x, img = x.to(device), img.to(device)
+        	x = x.permute(1, 0, 2)
             if model.emb_flag:
                 logits = model(x[:, :-1], img)
             else:            
