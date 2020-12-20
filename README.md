@@ -55,12 +55,15 @@ Readings: [Chapter 9. Convolutional Networks](http://www.deeplearningbook.org/co
 ### 3. Redes Neuronales Recurrentes (RNN)
 
 * Introducción a Redes Recurrentes ([video](https://www.youtube.com/watch?v=yHzflmQ9EoY))
-* Arquitecturas más conocidas: GRU, LSTM ([video](https://www.youtube.com/watch?v=Bcy_no-u_BM))
+* Arquitectura de Redes Recurrentes ([video](https://www.youtube.com/watch?v=Bcy_no-u_BM))
+* Auto-regresión, Language Modelling, y Arquitecturas Seq-to-Seq ([video](https://www.youtube.com/watch?v=bsKwb7wjYYc))
+* RNNs con Compuertas y Celdas de Memoria: GRU y LSTM ([video](https://www.youtube.com/watch?v=cDT9oYyXgjo))
 
 Readings: [Chapter 10. Sequence Modeling: Recurrentand Recursive Nets](http://www.deeplearningbook.org/contents/rnn.html), [Chapter 12. Applications](http://www.deeplearningbook.org/contents/applications.html)
 
 ### 4. Tópicos avanzados
 
+* Atención Neuronal ([video](https://www.youtube.com/watch?v=B9hMAvoWE7w))
 * Introducción a los Modelos Generativos.
 * Autoencoders
 * Autoencoder Variacionales

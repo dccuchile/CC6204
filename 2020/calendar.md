@@ -53,24 +53,23 @@
 ### Semana 11
 
 * Cátedra: Introducción a Redes Recurrentes ([video](https://www.youtube.com/watch?v=yHzflmQ9EoY))
-* Cátedra: Arquitecturas de Redes Recurrentes (GRU, LSTM, Compuertas) ([video](https://www.youtube.com/watch?v=Bcy_no-u_BM))
+* Cátedra: Arquitectura de Redes Recurrentes ([video](https://www.youtube.com/watch?v=Bcy_no-u_BM))
 
-### Semana 12
+### Semana 12 
 
-* Cátedra: Atención Neuronal
-* Cátedra: Transformers
+* Cátedra: Auto-regresión, Language Modelling, y Arquitecturas Seq-to-Seq ([video](https://www.youtube.com/watch?v=bsKwb7wjYYc))
 
 ### Semana 13
 
-* Cátedra: Graph Neural Networks 
-* Cátedra: Generative Adversarial Networks
+* Cátedra: RNNs con Compuertas y Celdas de Memoria: GRU y LSTM ([video](https://www.youtube.com/watch?v=cDT9oYyXgjo))
+* Cátedra: Atención Neuronal ([video](https://www.youtube.com/watch?v=B9hMAvoWE7w))
 
 ### Semana 14
 
-* Cátedra: Avanzado
-* Cátedra: Avanzado
+* Cátedra: Transformers
+* Cátedra: Graph Neural Networks 
 
 ### Semana 15
 
-* Cátedra: Avanzado
+* Cátedra: Generative Adversarial Networks
 * Cátedra: Avanzado
