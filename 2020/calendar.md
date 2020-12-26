@@ -55,7 +55,7 @@
 * Cátedra: Introducción a Redes Recurrentes ([video](https://www.youtube.com/watch?v=yHzflmQ9EoY))
 * Cátedra: Arquitectura de Redes Recurrentes ([video](https://www.youtube.com/watch?v=Bcy_no-u_BM))
 
-### Semana 12 
+### Semana 12
 
 * Cátedra: Auto-regresión, Language Modelling, y Arquitecturas Seq-to-Seq ([video](https://www.youtube.com/watch?v=bsKwb7wjYYc))
 
@@ -66,8 +66,8 @@
 
 ### Semana 14
 
-* Cátedra: Transformers
-* Cátedra: Graph Neural Networks 
+* Cátedra: Transformers ([video](https://www.youtube.com/watch?v=QTX6VgOWwE4))
+* Cátedra: Graph Neural Networks
 
 ### Semana 15
 

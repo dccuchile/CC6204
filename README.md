@@ -7,13 +7,15 @@ Curso introductorio (en español) al área de aprendizaje basado en redes neuron
 * Versiones anteriores del curso: [Otoño 2018](versiones_anteriores/2018), [Primavera 2019](versiones_anteriores/2019)
 
 ### Primavera 2020
+
 * [Calendario del curso](2020/calendar.md)
 * [YouTube playlist](https://www.youtube.com/playlist?list=PLBjZ-ginWc1e0_Dp4heHglsjJmacV_F20)
 * [Tareas](2020/tareas/README.md)
 
 ## Requerimientos
-- Una cuenta de Google para usar [Google Collaboratory](https://colab.research.google.com/), o
-- Tener instalados los siguientes paquetes de Python:
+
+* Una cuenta de Google para usar [Google Collaboratory](https://colab.research.google.com/), o
+* Tener instalados los siguientes paquetes de Python:
     1. [PyTorch](https://pytorch.org/)
     2. [Numpy](https://numpy.org/)
     3. [Jupyter Notebook](https://jupyter.org/install)
@@ -64,17 +66,16 @@ Readings: [Chapter 10. Sequence Modeling: Recurrentand Recursive Nets](http://ww
 ### 4. Tópicos avanzados
 
 * Atención Neuronal ([video](https://www.youtube.com/watch?v=B9hMAvoWE7w))
-* Introducción a los Modelos Generativos.
-* Autoencoders
-* Autoencoder Variacionales
+* Transformers ([video](https://www.youtube.com/watch?v=QTX6VgOWwE4))
+* Variational Autoencoders
 * Generative Adversarial Networks
-* Neural Turing Machine (NeuralTM).
-* Differentiable Neural Computers (DNC).
-* CapsNet.
+* Neural Turing Machine (NeuralTM)
+* Differentiable Neural Computers (DNC)
 
 Readings: [Chapter 14. Autoencoders](http://www.deeplearningbook.org/contents/autoencoders.html), [Chapter 20. Deep Generative Models](http://www.deeplearningbook.org/contents/generative_models.html)
 
 ## Libros
+
 No hay ningún libro de texto obligatorio para el curso. Algunas conferencias incluirán lecturas sugeridas de "Deep Learning" de Ian Goodfellow, Yoshua Bengio, and Aaron Courville; sin embargo, no es necesario comprar una copia, ya que está disponible de forma [gratuita en línea](http://www.deeplearningbook.org/).
 
 1. [Deep Learning](http://www.deeplearningbook.org/) by Ian Goodfellow, Yoshua Bengio, and Aaron Courville (bibliografía fundamental del curso)
@@ -86,25 +87,29 @@ No hay ningún libro de texto obligatorio para el curso. Algunas conferencias in
 7. [AutoML: Methods, Systems, Challenges](https://www.automl.org/book/) edited by Frank Hutter, Lars Kotthoff, and Joaquin Vanschoren
 
 ## Tutoriales
+
 1. [Quickstart tutorial numpy](https://docs.scipy.org/doc/numpy-dev/user/quickstart.html)
 2. [DeepLearning con PyTorch en 60 minutos](http://pytorch.org/tutorials/beginner/deep_learning_60min_blitz.html)
 
 ## Otros Cursos de DL
+
 1. [Introduction to Deep Learning](http://introtodeeplearning.com/)
 2. [Deep learning course on Coursera](https://www.coursera.org/specializations/deep-learning) by Andrew Ng
 3. [CS231n course](http://cs231n.stanford.edu/) by Stanford University
 4. [Courses](http://www.fast.ai/) by fast.ai
 
 ## Videos
+
 1. [Visualizing and Understanding Recurrent Networks](https://skillsmatter.com/skillscasts/6611-visualizing-and-understanding-recurrent-networks)
 2. [More on Transformers: BERT and Friends](https://tv.vera.com.uy/video/55388) by Jorge Pérez
 3. [Atención neuronal y el transformer](https://www.youtube.com/watch?v=4cY1H-QVlZM) by Jorge Pérez
 
 ## Otras Fuentes
+
 1. [How To Improve Deep Learning Performance](https://machinelearningmastery.com/improve-deep-learning-performance/)
 2. [An Overview of ResNet and its Variants](https://towardsdatascience.com/an-overview-of-resnet-and-its-variants-5281e2f56035)
-2. [CNN Architectures: LeNet, AlexNet, VGG, GoogLeNet, ResNet and more](https://medium.com/@sidereal/cnns-architectures-lenet-alexnet-vgg-googlenet-resnet-and-more-666091488df5)
-3. [Understanding LSTM Networks](http://colah.github.io/posts/2015-08-Understanding-LSTMs/)
-4. [Attention Is All You Need](https://arxiv.org/abs/1706.03762)
-5. [Attention is all you need explained](http://mlexplained.com/2017/12/29/attention-is-all-you-need-explained/)
-6. [BERT exaplained](http://mlexplained.com/2019/01/07/paper-dissected-bert-pre-training-of-deep-bidirectional-transformers-for-language-understanding-explained/)
+3. [CNN Architectures: LeNet, AlexNet, VGG, GoogLeNet, ResNet and more](https://medium.com/@sidereal/cnns-architectures-lenet-alexnet-vgg-googlenet-resnet-and-more-666091488df5)
+4. [Understanding LSTM Networks](http://colah.github.io/posts/2015-08-Understanding-LSTMs/)
+5. [Attention Is All You Need](https://arxiv.org/abs/1706.03762)
+6. [Attention is all you need explained](http://mlexplained.com/2017/12/29/attention-is-all-you-need-explained/)
+7. [BERT exaplained](http://mlexplained.com/2019/01/07/paper-dissected-bert-pre-training-of-deep-bidirectional-transformers-for-language-understanding-explained/)
